@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Remix EcoModa - Moda Sostenible con Propósito",
+  "description": "Prendas sostenibles con materiales certificados, estilo atemporal y producción responsable en Perú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

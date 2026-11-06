@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Nueva Paleta Oficial Vibrante de EcoModa */
+    --color-esmeralda: #1E8E5A;      /* Verde esmeralda vibrante (botones activos, títulos destacados, logo) */
+    --color-hoja: #7CC242;           /* Verde hoja brillante (acentos, iconos, hover, etiquetas sostenibles) */
+    --color-bosque: #1F4D36;         /* Verde bosque profundo (textos de títulos y bordes de contraste) */
+    --color-terracota: #E0643A;      /* Terracota intenso (CTAs, precios destacados, badges 'Nuevo') */
+    --color-amarillo-ocre: #F4B626;  /* Amarillo ocre cálido (detalles pequeños, subrayados) */
+    --color-turquesa: #2BB3A8;       /* Turquesa agua (fondos secundarios e informativos) */
+    --color-beige-arena: #F7F1E3;    /* Beige arena (fondo base de página y tarjetas) */
+    --color-blanco-roto: #FFFDF8;    /* Blanco roto (fondo de tarjetas y modales) */
+    --color-gris-verdoso: #435E50;   /* Gris verdoso para descripciones con contraste óptimo */
+
+    /* Sombras cálidas con tinte verde o terracota */
+    --shadow-warm-emerald: 0 10px 25px -5px rgba(30, 142, 90, 0.14), 0 8px 10px -6px rgba(30, 142, 90, 0.08);
+    --shadow-warm-terracotta: 0 10px 25px -5px rgba(224, 100, 58, 0.22), 0 8px 10px -6px rgba(224, 100, 58, 0.12);
+  }
+
+  html {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1F4D36;
+    background-color: #F7F1E3;
+  }
+
+  body {
+    background-color: #F7F1E3;
+    color: #1F4D36;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-title {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1F4D36;
+  }
+
+  /* Foco visible y accesible en todos los botones y controles */
+  :focus-visible {
+    outline: 2.5px solid #1E8E5A;
+    outline-offset: 3px;
+  }
+
+  /* Respeto estricto a preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Textura sutil de fibra natural / papel reciclado */
+.eco-fiber-pattern {
+  background-image: radial-gradient(#1E8E5A 0.5px, transparent 0.5px), radial-gradient(#E0643A 0.4px, #F7F1E3 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  opacity: 0.98;
+}
+
+.eco-card-paper {
+  background-color: #FFFDF8;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px -4px rgba(31, 77, 54, 0.08), 0 2px 6px -2px rgba(224, 100, 58, 0.04);
+}
+
+/* Breakpoints requeridos: 520px y 860px */
+@utility bp-mobile {
+  @media (min-width: 520px) {
+    @apply block;
+  }
+}
+
+/* Animaciones para flechas e interactividad dinámica */
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes nudgeRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes nudgeLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 1.8s infinite ease-in-out;
+}
+
+.animate-nudge-right {
+  animation: nudgeRight 1.5s infinite ease-in-out;
+}
+
+.animate-nudge-left {
+  animation: nudgeLeft 1.5s infinite ease-in-out;
+}
+
+/* Ocultar video y anular animaciones en caso de preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-bg {
+    display: none !important;
+  }
+  .animate-bounce-subtle,
+  .animate-nudge-right,
+  .animate-nudge-left,
+  .animate-bounce {
+    animation: none !important;
+    transform: none !important;
+  }
+}

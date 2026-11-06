@@ -1,0 +1,2168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo EcoModa | Moda Sostenible, Estilo con Propósito</title>
+  <meta name="description" content="Catálogo oficial de EcoModa. Prendas sostenibles para mujer y hombre confeccionadas éticamente con algodón orgánico, lino regenerativo y fibras recicladas en Perú." />
+
+  <!-- Tipografías oficiales: Montserrat (600, 700, 800) y Open Sans (400, 600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. IDENTIDAD VISUAL Y PALETA OFICIAL ECOMODA
+       - Verde esmeralda vibrante (#1E8E5A): botones activos, títulos destacados y logo.
+       - Verde hoja brillante (#7CC242): acentos, iconos, hover y etiquetas sostenibles.
+       - Verde bosque profundo (#1F4D36): títulos de tarjetas y bordes de contraste.
+       - Terracota intenso (#E0643A): precios y botones de acción.
+       - Amarillo ocre (#F4B626): badges de 'Nuevo' y subrayados.
+       - Turquesa agua (#2BB3A8): secciones secundarias.
+       - Beige arena (#F7F1E3): fondo de la página y de las tarjetas.
+       - Blanco roto (#FFFDF8): modales.
+       ========================================================================== */
+    :root {
+      --color-esmeralda: #1E8E5A;
+      --color-esmeralda-dark: #167046;
+      --color-hoja: #7CC242;
+      --color-bosque: #1F4D36;
+      --color-bosque-dark: #163a29;
+      --color-terracota: #E0643A;
+      --color-terracota-dark: #C8532B;
+      --color-amarillo-ocre: #F4B626;
+      --color-turquesa: #2BB3A8;
+      --color-beige-arena: #F7F1E3;
+      --color-beige-borde: #E3D9C3;
+      --color-blanco-roto: #FFFDF8;
+      --color-texto-muted: #435E50;
+
+      --font-title: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-card: 14px;
+      --radius-modal: 16px;
+
+      /* Sombras cálidas con tinte verde y terracota */
+      --shadow-warm: 0 8px 24px -4px rgba(31, 77, 54, 0.10), 0 4px 10px -2px rgba(224, 100, 58, 0.05);
+      --shadow-hover: 0 14px 30px -4px rgba(31, 77, 54, 0.18), 0 6px 14px -2px rgba(224, 100, 58, 0.12);
+      --shadow-modal: 0 24px 60px -10px rgba(31, 77, 54, 0.35);
+
+      --transition-standard: 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-bosque);
+      background-color: var(--color-beige-arena);
+      /* Textura suave de fibra/papel arena */
+      background-image: 
+        radial-gradient(#1E8E5A 0.45px, transparent 0.45px), 
+        radial-gradient(#E0643A 0.35px, var(--color-beige-arena) 0.35px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Accesibilidad: Foco visible */
+    :focus-visible {
+      outline: 2.5px solid var(--color-esmeralda);
+      outline-offset: 3px;
+    }
+
+    /* Respeto estricto a preferencia de reducción de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ==========================================================================
+       2. ENCABEZADO CON FONDO VERDE BOSQUE Y TEXTURA DE PAPEL RECICLADO
+       ========================================================================== */
+    .catalog-header {
+      background-color: var(--color-bosque);
+      /* Textura de papel reciclado sutil */
+      background-image: 
+        radial-gradient(rgba(247, 241, 227, 0.09) 1px, transparent 1px),
+        radial-gradient(rgba(124, 194, 66, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+      background-position: 0 0, 12px 12px;
+      color: var(--color-blanco-roto);
+      padding: 3rem 1.5rem 2.75rem;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid var(--color-esmeralda);
+      box-shadow: 0 4px 20px rgba(22, 58, 41, 0.25);
+    }
+
+    .header-container {
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Logo EcoModa en encabezado */
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+
+    .header-brand svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-hoja);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    .brand-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--color-blanco-roto);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title span {
+      color: var(--color-terracota);
+    }
+
+    /* Título principal en mayúsculas y negrita */
+    .catalog-main-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 0.65rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Subtítulo */
+    .catalog-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      font-weight: 400;
+      color: #E8EFE9;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    /* Indicador de compromiso / eco badges en barra */
+    .header-eco-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem 1.75rem;
+      margin-bottom: 2.25rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #D3E6D7;
+    }
+
+    .header-eco-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .header-eco-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-hoja);
+      stroke-width: 2.2;
+    }
+
+    /* ==========================================================================
+       3. SELECTOR DE SECCIÓN (MUJER / HOMBRE / TODOS)
+       ========================================================================== */
+    .filter-bar-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .filter-selector {
+      display: inline-flex;
+      background: rgba(18, 45, 32, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.35rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(124, 194, 66, 0.35);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      gap: 0.35rem;
+    }
+
+    .filter-btn {
+      appearance: none;
+      background: transparent;
+      border: none;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #E3EDE5;
+      padding: 0.65rem 1.6rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all var(--transition-standard);
+      position: relative;
+    }
+
+    .filter-btn:hover:not(.active) {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Botón activo: Verde Esmeralda Vibrante #1E8E5A */
+    .filter-btn.active {
+      background-color: var(--color-esmeralda);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(30, 142, 90, 0.45);
+    }
+
+    /* ==========================================================================
+       4. CONTENEDOR PRINCIPAL Y BARRA DE ESTADO DEL CATÁLOGO
+       ========================================================================== */
+    .catalog-main {
+      flex: 1;
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .catalog-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-beige-borde);
+    }
+
+    .catalog-counter-text {
+      font-size: 0.9375rem;
+      color: var(--color-texto-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .catalog-counter-text strong {
+      color: var(--color-bosque);
+      font-family: var(--font-title);
+    }
+
+    .catalog-tag-info {
+      font-size: 0.8125rem;
+      color: var(--color-texto-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(31, 77, 54, 0.05);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+    }
+
+    .catalog-tag-info svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-esmeralda);
+    }
+
+    /* ==========================================================================
+       5. CUADRÍCULA DE TARJETAS (3 ESCRITORIO, 2 TABLET, 1 MÓVIL)
+       ========================================================================== */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      transition: opacity 250ms ease, transform 250ms ease;
+    }
+
+    /* Tablet: 2 columnas */
+    @media (max-width: 1023px) {
+      .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    /* Móvil: 1 columna */
+    @media (max-width: 639px) {
+      .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .catalog-header {
+        padding: 2.5rem 1rem 2rem;
+      }
+      .filter-btn {
+        padding: 0.55rem 1.15rem;
+        font-size: 0.8125rem;
+      }
+    }
+
+    /* ==========================================================================
+       6. TARJETA DEL PRODUCTO (Bordes 14px, Proporción 4:5, 3 Zonas)
+       ========================================================================== */
+    .product-card {
+      background-color: var(--color-beige-arena);
+      border: 1.5px solid var(--color-beige-borde);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-warm);
+      transition: transform var(--transition-standard), 
+                  border-color var(--transition-standard), 
+                  box-shadow var(--transition-standard);
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* Hover: la tarjeta sube un poco y el borde cambia a verde hoja brillante */
+    .product-card:hover,
+    .product-card:focus-within {
+      transform: translateY(-6px);
+      border-color: var(--color-hoja);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* -------------------------------------------------------------
+       ZONA 1: Foto con object-fit: cover en marco fino beige (4:5)
+       ------------------------------------------------------------- */
+    .card-media-zone {
+      position: relative;
+      margin: 0.75rem 0.75rem 0;
+      border: 1px solid var(--color-beige-borde);
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background-color: #EFE8D8;
+    }
+
+    .card-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .product-card:hover .card-media-img {
+      transform: scale(1.035);
+    }
+
+    /* Badge 'Nuevo' en Amarillo Ocre #F4B626 */
+    .card-new-badge {
+      position: absolute;
+      top: 0.65rem;
+      left: 0.65rem;
+      background-color: var(--color-amarillo-ocre);
+      color: #382500;
+      font-family: var(--font-title);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    /* Etiqueta ecológica en esquina con Verde Hoja Brillante */
+    .card-eco-tag {
+      position: absolute;
+      bottom: 0.65rem;
+      left: 0.65rem;
+      background: rgba(255, 253, 248, 0.94);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: var(--color-bosque);
+      font-size: 0.71875rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 2px 8px rgba(31, 77, 54, 0.12);
+      border: 1px solid rgba(124, 194, 66, 0.4);
+      z-index: 2;
+    }
+
+    .card-eco-tag svg {
+      width: 13px;
+      height: 13px;
+      color: var(--color-hoja);
+      stroke-width: 2.2;
+    }
+
+    /* Indicador sutil de click para ver detalle */
+    .card-zoom-hint {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.65rem;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(4px);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-bosque);
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.2s ease;
+      z-index: 2;
+    }
+
+    .product-card:hover .card-zoom-hint {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card-zoom-hint svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* -------------------------------------------------------------
+       ZONA 2: Nombre de la prenda (negrita, verde bosque, máx 2 líneas)
+       y descripción breve (material y color)
+       ------------------------------------------------------------- */
+    .card-content-zone {
+      padding: 1rem 1rem 0.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-name {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      line-height: 1.35;
+      color: var(--color-bosque);
+      margin-bottom: 0.4rem;
+      /* Máximo dos líneas */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .product-card:hover .product-name {
+      color: var(--color-esmeralda);
+    }
+
+    .product-short-desc {
+      font-size: 0.8125rem;
+      color: var(--color-texto-muted);
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       ZONA 3: Sección (Mujer/Hombre), REFERENCIA, Tallas y Precio
+       ------------------------------------------------------------- */
+    .card-footer-zone {
+      padding: 0.75rem 1rem 1rem;
+      border-top: 1px dashed var(--color-beige-borde);
+      margin-top: auto;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-gender-badge {
+      font-family: var(--font-title);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background-color: rgba(31, 77, 54, 0.08);
+      color: var(--color-bosque);
+    }
+
+    .product-ref {
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--color-texto-muted);
+      font-size: 0.71875rem;
+      letter-spacing: 0.03em;
+    }
+
+    .card-bottom-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 0.25rem;
+    }
+
+    .product-sizes-text {
+      font-size: 0.75rem;
+      color: var(--color-texto-muted);
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-terracota);
+      letter-spacing: -0.01em;
+    }
+
+    /* ==========================================================================
+       7. MODAL DE DETALLE DE PRENDA (Blanco Roto #FFFDF8)
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(22, 58, 41, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 280ms ease, visibility 280ms ease;
+    }
+
+    .modal-overlay.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
+      background-color: var(--color-blanco-roto);
+      border-radius: var(--radius-modal);
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-modal);
+      border: 1.5px solid var(--color-beige-borde);
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.is-active .modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    @media (max-width: 767px) {
+      .modal-dialog {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+      }
+    }
+
+    /* Botón de cerrar circular en esquina superior */
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid var(--color-beige-borde);
+      color: var(--color-bosque);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--color-terracota);
+      color: #FFFFFF;
+      border-color: var(--color-terracota);
+      transform: scale(1.08);
+    }
+
+    .modal-media-col {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #F8F4EB;
+      border-right: 1px solid var(--color-beige-borde);
+    }
+
+    .modal-media-box {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-beige-borde);
+      box-shadow: 0 8px 20px rgba(31, 77, 54, 0.08);
+      position: relative;
+    }
+
+    .modal-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-info-col {
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .modal-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-category-tag {
+      font-family: var(--font-title);
+      font-size: 0.71875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--color-esmeralda);
+      color: #FFFFFF;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+    }
+
+    .modal-ref-tag {
+      font-family: var(--font-title);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-texto-muted);
+    }
+
+    .modal-product-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: var(--color-bosque);
+      margin-bottom: 0.85rem;
+    }
+
+    .modal-eco-feature {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(124, 194, 66, 0.16);
+      border: 1px solid rgba(124, 194, 66, 0.5);
+      color: var(--color-bosque-dark);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-eco-feature svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-esmeralda);
+    }
+
+    .modal-detail-block {
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .modal-detail-item {
+      display: flex;
+      margin-bottom: 0.35rem;
+    }
+
+    .modal-detail-label {
+      font-weight: 700;
+      color: var(--color-bosque);
+      min-width: 100px;
+    }
+
+    .modal-detail-value {
+      color: var(--color-texto-muted);
+    }
+
+    /* Selector interactivo de tallas en el modal */
+    .modal-sizes-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-sizes-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-bosque);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-sizes-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .size-chip {
+      appearance: none;
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-beige-borde);
+      border-radius: 6px;
+      padding: 0.4rem 0.75rem;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      color: var(--color-bosque);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .size-chip:hover {
+      border-color: var(--color-esmeralda);
+      color: var(--color-esmeralda);
+    }
+
+    .size-chip.is-selected {
+      background-color: var(--color-bosque);
+      color: #FFFFFF;
+      border-color: var(--color-bosque);
+      box-shadow: 0 2px 6px rgba(31, 77, 54, 0.25);
+    }
+
+    /* Precio y botón WhatsApp */
+    .modal-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-beige-borde);
+    }
+
+    .modal-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-price-label {
+      font-size: 0.71875rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-texto-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .modal-price-val {
+      font-family: var(--font-title);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--color-terracota);
+      line-height: 1;
+    }
+
+    /* Botón Terracota Intenso #E0643A para consultar por WhatsApp */
+    .btn-modal-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background-color: var(--color-terracota);
+      color: #FFFFFF;
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 0.9375rem;
+      padding: 0.85rem 1.45rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 16px rgba(224, 100, 58, 0.32);
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-modal-whatsapp:hover {
+      background-color: var(--color-terracota-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(224, 100, 58, 0.42);
+    }
+
+    .btn-modal-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       8. PIE DE PÁGINA (BANDA VERDE ESMERALDA CON TEXTO EN MAYÚSCULAS)
+       ========================================================================== */
+    .catalog-footer {
+      background-color: var(--color-esmeralda);
+      color: #FFFFFF;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      margin-top: auto;
+      box-shadow: 0 -4px 16px rgba(30, 142, 90, 0.15);
+    }
+
+    .footer-content {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Texto blanco en mayúsculas: "WWW.ECOMODA.PE" */
+    .footer-domain {
+      font-family: var(--font-title);
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-domain:hover {
+      opacity: 0.9;
+      text-decoration: underline;
+    }
+
+    .footer-caption {
+      font-size: 0.8125rem;
+      color: #E2F3E9;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       ENCABEZADO EDITORIAL CON FONDO VERDE BOSQUE (#1F4D36) Y PAPEL RECICLADO
+       ========================================================================== -->
+  <header class="catalog-header" role="banner">
+    <div class="header-container">
+      
+      <!-- Marca / Logo con Verde Esmeralda y Terracota -->
+      <a href="/" class="header-brand" aria-label="EcoModa, moda sostenible">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        <span class="brand-title">Eco<span>Moda</span></span>
+      </a>
+
+      <!-- Título principal en mayúsculas y negrita -->
+      <h1 class="catalog-main-title">CATÁLOGO ECOMODA</h1>
+
+      <!-- Subtítulo -->
+      <p class="catalog-subtitle">Moda sostenible, estilo con propósito</p>
+
+      <!-- Insignias de trazabilidad y datos ecológicos verificables -->
+      <div class="header-eco-badges" aria-label="Compromisos ecológicos certificados">
+        <div class="header-eco-item">
+          <!-- Icono de Hoja -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+          <span>100% Fibras Limpias</span>
+        </div>
+        <div class="header-eco-item">
+          <!-- Icono de Gota -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          <span>Ahorro Hídrico Certificado</span>
+        </div>
+        <div class="header-eco-item">
+          <!-- Icono de Sol -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <span>Tintes Botánicos Libres de Tóxicos</span>
+        </div>
+        <div class="header-eco-item">
+          <!-- Icono de Reciclaje -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+            <path d="M11 19h8.2a1.8 1.8 0 0 0 1.56-2.655L17.8 11"/>
+            <path d="m14 14 3-3 3 3"/>
+            <path d="m17 3-4.5 7.5L8 3"/>
+            <path d="M9.5 7h5"/>
+          </svg>
+          <span>Circularidad & Cero Plástico</span>
+        </div>
+      </div>
+
+      <!-- Selector de sección: MUJER / HOMBRE / TODOS -->
+      <nav class="filter-bar-wrapper" aria-label="Filtro de colecciones del catálogo">
+        <div class="filter-selector" role="tablist">
+          <button 
+            type="button" 
+            class="filter-btn active" 
+            id="filter-todos" 
+            role="tab" 
+            aria-selected="true" 
+            data-filter="todos"
+          >
+            TODOS
+          </button>
+          <button 
+            type="button" 
+            class="filter-btn" 
+            id="filter-mujer" 
+            role="tab" 
+            aria-selected="false" 
+            data-filter="mujer"
+          >
+            MUJER
+          </button>
+          <button 
+            type="button" 
+            class="filter-btn" 
+            id="filter-hombre" 
+            role="tab" 
+            aria-selected="false" 
+            data-filter="hombre"
+          >
+            HOMBRE
+          </button>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       CONTENIDO PRINCIPAL: CUADRÍCULA DE PRENDAS DEL CATÁLOGO
+       ========================================================================== -->
+  <main class="catalog-main" id="main-content">
+    
+    <!-- Barra informativa de resultados y conteo -->
+    <div class="catalog-meta-bar">
+      <p class="catalog-counter-text" id="catalog-counter" aria-live="polite">
+        Mostrando <strong id="visible-count">12</strong> prendas sostenibles
+      </p>
+      <div class="catalog-tag-info">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Solo prendas de vestir éticas · Hecho en Perú</span>
+      </div>
+    </div>
+
+    <!-- Contenedor dinámico de las 12 prendas -->
+    <section 
+      class="catalog-grid" 
+      id="catalog-grid" 
+      aria-label="Listado de prendas del catálogo EcoModa"
+    >
+      <!-- Se inyecta dinámicamente mediante JavaScript -->
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODAL DE VISTA AMPLIADA Y CONSULTA POR WHATSAPP (Fondo Blanco Roto)
+       ========================================================================== -->
+  <div 
+    class="modal-overlay" 
+    id="product-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-hidden="true" 
+    aria-labelledby="modal-title"
+  >
+    <div class="modal-dialog">
+      <!-- Botón de cierre en esquina -->
+      <button 
+        type="button" 
+        class="modal-close-btn" 
+        id="modal-close-btn" 
+        aria-label="Cerrar ventana de detalle de prenda"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Columna izquierda: Imagen ampliada en proporción 4:5 -->
+      <div class="modal-media-col">
+        <div class="modal-media-box">
+          <img id="modal-img" src="" alt="" />
+        </div>
+      </div>
+
+      <!-- Columna derecha: Detalles, tallas y botón de WhatsApp -->
+      <div class="modal-info-col">
+        <div>
+          <div class="modal-header-meta">
+            <span class="modal-category-tag" id="modal-gender">Mujer</span>
+            <span class="modal-ref-tag" id="modal-ref">REF: ECO-M01</span>
+          </div>
+
+          <h2 class="modal-product-title" id="modal-title">Nombre de la prenda</h2>
+
+          <!-- Etiqueta de material sostenible certificado con icono -->
+          <div class="modal-eco-feature" id="modal-eco-badge">
+            <span id="modal-eco-icon"></span>
+            <span id="modal-eco-text">Algodón orgánico</span>
+          </div>
+
+          <!-- Información técnica y de trazabilidad -->
+          <div class="modal-detail-block">
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Material:</span>
+              <span class="modal-detail-value" id="modal-material">100% algodón orgánico certificado</span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Color:</span>
+              <span class="modal-detail-value" id="modal-color">Arena natural</span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Tallas:</span>
+              <span class="modal-detail-value" id="modal-sizes-text">XS a XL</span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Origen:</span>
+              <span class="modal-detail-value" id="modal-origin">Confección ética en talleres locales de Perú</span>
+            </div>
+          </div>
+
+          <!-- Selector visual de tallas -->
+          <div class="modal-sizes-section">
+            <div class="modal-sizes-title">Selecciona tu talla:</div>
+            <div class="modal-sizes-chips" id="modal-sizes-chips" role="radiogroup" aria-label="Tallas disponibles">
+              <!-- Generado dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila de acción con precio y WhatsApp -->
+        <div class="modal-action-row">
+          <div class="modal-price-box">
+            <span class="modal-price-label">Precio sostenible</span>
+            <span class="modal-price-val" id="modal-price">S/ 95,00</span>
+          </div>
+
+          <a 
+            href="#" 
+            class="btn-modal-whatsapp" 
+            id="modal-whatsapp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Consultar disponibilidad de esta prenda por WhatsApp"
+          >
+            <!-- Icono oficial WhatsApp -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.29 7.37 20.29 11.92C20.29 16.47 16.59 20.15 12.04 20.15ZM16.56 14.37C16.31 14.25 15.09 13.65 14.86 13.57C14.64 13.48 14.47 13.44 14.31 13.69C14.14 13.94 13.67 14.49 13.52 14.65C13.38 14.82 13.23 14.84 12.98 14.72C12.73 14.6 11.92 14.33 10.96 13.48C10.21 12.82 9.71 11.99 9.56 11.74C9.42 11.49 9.54 11.36 9.67 11.23C9.78 11.12 9.92 10.94 10.04 10.8C10.17 10.65 10.21 10.55 10.29 10.38C10.38 10.21 10.33 10.07 10.27 9.94C10.21 9.82 9.71 8.59 9.5 8.09C9.3 7.6 9.09 7.67 8.94 7.66C8.79 7.66 8.63 7.65 8.46 7.65C8.3 7.65 8.03 7.71 7.8 7.96C7.57 8.21 6.93 8.81 6.93 10.03C6.93 11.25 7.82 12.43 7.94 12.59C8.07 12.76 9.68 15.24 12.16 16.31C12.75 16.56 13.21 16.72 13.57 16.83C14.16 17.02 14.7 16.99 15.13 16.93C15.61 16.86 16.56 16.35 16.76 15.79C16.96 15.22 16.96 14.74 16.9 14.64C16.84 14.54 16.68 14.49 16.43 14.37H16.56Z"/>
+            </svg>
+            <span>Consultar por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PIE DE PÁGINA (BANDA VERDE ESMERALDA #1E8E5A Y TEXTO BLANCO EN MAYÚSCULAS)
+       ========================================================================== -->
+  <footer class="catalog-footer" role="contentinfo">
+    <div class="footer-content">
+      <a href="https://www.ecomoda.pe" class="footer-domain" target="_blank" rel="noopener noreferrer">WWW.ECOMODA.PE</a>
+      <p class="footer-caption">Moda sostenible y ética confeccionada en Perú · Lima · Arequipa · Trujillo · Piura</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       LÓGICA JAVASCRIPT: DATOS, ILUSTRACIONES SVG, FILTRO Y MODAL INTERACTIVO
+       (Sin uso de localStorage ni sessionStorage)
+       ========================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* -------------------------------------------------------------
+         1. CONFIGURACIÓN Y CONSTANTES
+         ------------------------------------------------------------- */
+      const WHATSAPP_PHONE = '51000000000'; // Número configurado para EcoModa Perú
+
+      /* -------------------------------------------------------------
+         2. GENERADOR DE ILUSTRACIONES VECTORIALES DE LÍNEA EN 4:5
+         Ilustraciones precisas para cada prenda sobre fondos naturales
+         (madera clara, piedra clara, neutro de estudio, blanco limpio)
+         con proporción 4:5 y estética refinada.
+         ------------------------------------------------------------- */
+
+      // Helper para convertir SVG a data URI
+      function svgToDataUri(svgString) {
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString.trim());
+      }
+
+      // Iconos ecológicos en línea verde
+      const ECO_ICONS = {
+        leaf: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>`,
+        droplet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+        sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`,
+        recycle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.2a1.8 1.8 0 0 0 1.56-2.655L17.8 11"/><path d="m14 14 3-3 3 3"/><path d="m17 3-4.5 7.5L8 3"/><path d="M9.5 7h5"/></svg>`,
+        butterfly: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V9"/><path d="M12 12c-3-5-8-4-8 1s4 6 8 2c4 4 8 3 8-2s-5-6-8-1Z"/></svg>`
+      };
+
+      // 1. Blusa de algodón orgánico con mangas abullonadas (beige sobre madera clara)
+      const SVG_ECO_M01 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="woodBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F2EBDC"/>
+            <stop offset="50%" stop-color="#EBE2D0"/>
+            <stop offset="100%" stop-color="#E2D6C0"/>
+          </linearGradient>
+          <linearGradient id="blouseBeige" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F5EFE3"/>
+            <stop offset="100%" stop-color="#E8DCBE"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo de madera clara con tablones -->
+        <rect width="400" height="500" fill="url(#woodBg)"/>
+        <line x1="130" y1="0" x2="130" y2="500" stroke="#D8CAAF" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <line x1="270" y1="0" x2="270" y2="500" stroke="#D8CAAF" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <!-- Silueta de blusa con mangas abullonadas -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra de la prenda -->
+          <path d="M150 115 C130 110, 70 140, 65 210 C60 270, 95 285, 120 280 L135 275 L135 390 C135 400, 265 400, 265 390 L265 275 L280 280 C305 285, 340 270, 335 210 C330 140, 270 110, 250 115 Z" fill="rgba(67, 94, 80, 0.08)"/>
+          <!-- Mangas abullonadas izquierda y derecha -->
+          <path d="M155 120 C120 115, 68 150, 72 215 C75 265, 105 275, 125 265 C135 258, 140 230, 142 205 Z" fill="#E8DBC0" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M245 120 C280 115, 332 150, 328 215 C325 265, 295 275, 275 265 C265 258, 260 230, 258 205 Z" fill="#E8DBC0" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Pliegues en volumen de mangas -->
+          <path d="M85 185 C95 210, 105 240, 120 250" fill="none" stroke="#B8A88A" stroke-width="2"/>
+          <path d="M315 185 C305 210, 295 240, 280 250" fill="none" stroke="#B8A88A" stroke-width="2"/>
+          <!-- Cuerpo de la blusa -->
+          <path d="M150 118 C170 135, 230 135, 250 118 L262 380 C262 390, 138 390, 138 380 Z" fill="url(#blouseBeige)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuello y abertura botánica -->
+          <path d="M165 125 C180 140, 220 140, 235 125" fill="none" stroke="#1F4D36" stroke-width="2.5"/>
+          <path d="M200 138 L200 375" fill="none" stroke="#1F4D36" stroke-width="1.8" stroke-dasharray="6 4"/>
+          <!-- Botones de madera -->
+          <circle cx="200" cy="165" r="4" fill="#C89D65" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="205" r="4" fill="#C89D65" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="245" r="4" fill="#C89D65" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="285" r="4" fill="#C89D65" stroke="#1F4D36" stroke-width="1.5"/>
+          <!-- Pliegues de caída suave en el bajo -->
+          <path d="M160 380 C170 365, 175 350, 180 320" fill="none" stroke="#CBBFA5" stroke-width="1.8"/>
+          <path d="M240 380 C230 365, 225 350, 220 320" fill="none" stroke="#CBBFA5" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 2. Vestido de lino reciclado con estampado botánico (verde hoja colgado sobre fondo blanco)
+      const SVG_ECO_M02 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="dressGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#76AB55"/>
+            <stop offset="100%" stop-color="#5E933D"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo blanco roto de estudio -->
+        <rect width="400" height="500" fill="#FAF8F5"/>
+        <line x1="200" y1="30" x2="200" y2="70" stroke="#D3C9B8" stroke-width="2"/>
+        <!-- Percha de madera -->
+        <path d="M200 68 L140 100 L260 100 Z" fill="#D2B588" stroke="#1F4D36" stroke-width="2"/>
+        <circle cx="200" cy="55" r="8" fill="none" stroke="#1F4D36" stroke-width="2"/>
+        <!-- Vestido largo de lino verde hoja -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra -->
+          <path d="M152 105 L135 150 L110 435 C110 445, 290 445, 290 435 L265 150 L248 105 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Silueta del vestido -->
+          <path d="M160 100 L145 150 C165 160, 235 160, 255 150 L240 100 C220 115, 180 115, 160 100 Z" fill="url(#dressGreen)" stroke="#1F4D36" stroke-width="2.5"/>
+          <path d="M150 155 C165 210, 165 230, 155 240 L115 425 C110 435, 290 435, 285 425 L245 240 C235 230, 235 210, 250 155 Z" fill="url(#dressGreen)" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Cinturón / lazo de ajuste -->
+          <rect x="155" y="235" width="90" height="12" rx="4" fill="#4B772E" stroke="#1F4D36" stroke-width="1.8"/>
+          <!-- Estampado botánico de hojas en crema y verde oscuro -->
+          <g stroke="#F7F1E3" stroke-width="1.8" fill="none">
+            <path d="M170 280 C180 270, 195 285, 185 300 C175 315, 160 295, 170 280 Z"/>
+            <path d="M225 320 C235 310, 250 325, 240 340 C230 355, 215 335, 225 320 Z"/>
+            <path d="M155 360 C165 350, 180 365, 170 380 C160 395, 145 375, 155 360 Z"/>
+            <path d="M220 200 C228 190, 240 200, 235 210 C230 220, 215 210, 220 200 Z"/>
+            <path d="M245 385 C255 375, 270 390, 260 405 C250 420, 235 400, 245 385 Z"/>
+          </g>
+          <!-- Pliegues de caída del lino -->
+          <path d="M170 250 L160 425" fill="none" stroke="#4C7830" stroke-width="1.8"/>
+          <path d="M200 250 L200 428" fill="none" stroke="#4C7830" stroke-width="1.8"/>
+          <path d="M230 250 L240 425" fill="none" stroke="#4C7830" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 3. Pantalón palazzo de lino natural (crema sobre piedra clara)
+      const SVG_ECO_M03 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="stoneBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EBE5D8"/>
+            <stop offset="100%" stop-color="#DDD5C4"/>
+          </linearGradient>
+          <linearGradient id="palazzoCream" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFDF6"/>
+            <stop offset="100%" stop-color="#EFE8D6"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo de piedra clara / losa natural -->
+        <rect width="400" height="500" fill="url(#stoneBg)"/>
+        <!-- Textura de piedra -->
+        <circle cx="90" cy="80" r="1.5" fill="#B5A992"/>
+        <circle cx="310" cy="140" r="2" fill="#B5A992"/>
+        <circle cx="70" cy="380" r="1.5" fill="#B5A992"/>
+        <circle cx="330" cy="420" r="2" fill="#B5A992"/>
+        <!-- Pantalón Palazzo Ancho -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra -->
+          <path d="M152 70 L248 70 L256 120 L308 425 L215 425 L200 215 L185 425 L92 425 L144 120 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Cuerpo del pantalón -->
+          <path d="M150 70 L250 70 L258 120 L310 420 L218 420 L200 210 L182 420 L90 420 L142 120 Z" fill="url(#palazzoCream)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cintura alta y trabillas -->
+          <rect x="150" y="70" width="100" height="24" rx="3" fill="#F4EBD9" stroke="#1F4D36" stroke-width="2"/>
+          <line x1="170" y1="70" x2="170" y2="94" stroke="#1F4D36" stroke-width="1.8"/>
+          <line x1="230" y1="70" x2="230" y2="94" stroke="#1F4D36" stroke-width="1.8"/>
+          <!-- Pliegues frontales amplios de caída -->
+          <line x1="175" y1="94" x2="155" y2="415" stroke="#D3C7AB" stroke-width="2"/>
+          <line x1="225" y1="94" x2="245" y2="415" stroke="#D3C7AB" stroke-width="2"/>
+          <!-- Tiro y bolsillos laterales -->
+          <path d="M200 94 L200 210" stroke="#1F4D36" stroke-width="2"/>
+          <path d="M154 110 L170 145" stroke="#1F4D36" stroke-width="1.8"/>
+          <path d="M246 110 L230 145" stroke="#1F4D36" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 4. Falda midi de algodón pima (verde oliva con tela fluida)
+      const SVG_ECO_M04 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="skirtOlive" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6E844F"/>
+            <stop offset="100%" stop-color="#55693C"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo beige neutro cálido -->
+        <rect width="400" height="500" fill="#F3ECE0"/>
+        <!-- Silueta fluida de falda midi en A -->
+        <g transform="translate(0, 30)">
+          <!-- Sombra -->
+          <path d="M155 80 L245 80 L305 385 C275 400, 125 400, 95 385 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Falda -->
+          <path d="M155 80 L245 80 C255 160, 285 280, 305 380 C275 398, 240 390, 200 395 C160 390, 125 398, 95 380 C115 280, 145 160, 155 80 Z" fill="url(#skirtOlive)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cintura elástica acanalada -->
+          <rect x="155" y="80" width="90" height="20" rx="4" fill="#4B5E34" stroke="#1F4D36" stroke-width="2"/>
+          <!-- Pliegues fluidos de movimiento -->
+          <path d="M175 100 C170 200, 145 300, 135 385" fill="none" stroke="#465730" stroke-width="2"/>
+          <path d="M200 100 C200 200, 200 300, 200 390" fill="none" stroke="#465730" stroke-width="2"/>
+          <path d="M225 100 C230 200, 255 300, 265 385" fill="none" stroke="#465730" stroke-width="2"/>
+          <!-- Botoncitos decorativos en lateral -->
+          <circle cx="168" cy="130" r="3.5" fill="#D2B588"/>
+          <circle cx="168" cy="155" r="3.5" fill="#D2B588"/>
+          <circle cx="168" cy="180" r="3.5" fill="#D2B588"/>
+        </g>
+      </svg>`;
+
+      // 5. Chaqueta ligera de fibras recicladas (verde bosque sobre fondo neutro)
+      const SVG_ECO_M05 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="jacketForest" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2A5C43"/>
+            <stop offset="100%" stop-color="#1B422F"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo neutro de estudio -->
+        <rect width="400" height="500" fill="#EAE5DC"/>
+        <!-- Chaqueta ligera tipo sobrecamisa -->
+        <g transform="translate(0, 15)">
+          <!-- Sombra -->
+          <path d="M140 100 L75 160 L100 380 L135 370 L135 410 L265 410 L265 370 L300 380 L325 160 L260 100 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Mangas -->
+          <path d="M140 105 L75 165 L105 380 L135 365 L135 180 Z" fill="#24513B" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M260 105 L325 165 L295 380 L265 365 L265 180 Z" fill="#24513B" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuerpo de chaqueta -->
+          <path d="M135 105 L265 105 L265 405 L135 405 Z" fill="url(#jacketForest)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuello camisero estructurado -->
+          <path d="M135 105 L175 135 L200 115 L225 135 L265 105 L200 90 Z" fill="#356E52" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Tapeta central con botones de coco reciclado -->
+          <line x1="200" y1="115" x2="200" y2="405" stroke="#1F4D36" stroke-width="2"/>
+          <circle cx="200" cy="155" r="4.5" fill="#A88B64" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="205" r="4.5" fill="#A88B64" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="255" r="4.5" fill="#A88B64" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="305" r="4.5" fill="#A88B64" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="355" r="4.5" fill="#A88B64" stroke="#1F4D36" stroke-width="1.5"/>
+          <!-- Bolsillos de parche con solapa -->
+          <rect x="145" y="180" width="42" height="48" rx="3" fill="#224835" stroke="#1F4D36" stroke-width="1.8"/>
+          <path d="M145 180 L166 192 L187 180 Z" fill="#356E52" stroke="#1F4D36" stroke-width="1.8"/>
+          <rect x="213" y="180" width="42" height="48" rx="3" fill="#224835" stroke="#1F4D36" stroke-width="1.8"/>
+          <path d="M213 180 L234 192 L255 180 Z" fill="#356E52" stroke="#1F4D36" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 6. Top de punto de algodón orgánico (terracota suave doblado sobre madera)
+      const SVG_ECO_M06 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="woodTable" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#EBE2CD"/>
+            <stop offset="50%" stop-color="#E2D6BE"/>
+            <stop offset="100%" stop-color="#D9C9AD"/>
+          </linearGradient>
+          <linearGradient id="knitTerracotta" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EB7C56"/>
+            <stop offset="100%" stop-color="#CD5831"/>
+          </linearGradient>
+        </defs>
+        <!-- Mesa de madera clara con vetas -->
+        <rect width="400" height="500" fill="url(#woodTable)"/>
+        <line x1="0" y1="120" x2="400" y2="120" stroke="#CBB99C" stroke-width="1.5"/>
+        <line x1="0" y1="260" x2="400" y2="260" stroke="#CBB99C" stroke-width="1.5"/>
+        <line x1="0" y1="390" x2="400" y2="390" stroke="#CBB99C" stroke-width="1.5"/>
+        <!-- Prenda de punto doblada en mesa -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra de la prenda doblada -->
+          <rect x="95" y="150" width="215" height="240" rx="14" fill="rgba(31, 77, 54, 0.12)"/>
+          <!-- Bloque doblado principal -->
+          <rect x="90" y="140" width="220" height="230" rx="12" fill="url(#knitTerracotta)" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Cuello redondo en punto acanalado -->
+          <path d="M150 140 C170 170, 230 170, 250 140" fill="#B94924" stroke="#1F4D36" stroke-width="2.5"/>
+          <path d="M155 145 C175 168, 225 168, 245 145" fill="none" stroke="#FFA382" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <!-- Dobleces de mangas a los lados -->
+          <line x1="125" y1="140" x2="125" y2="370" stroke="#9C3A19" stroke-width="2"/>
+          <line x1="275" y1="140" x2="275" y2="370" stroke="#9C3A19" stroke-width="2"/>
+          <!-- Pliegue horizontal central de doblado -->
+          <line x1="90" y1="260" x2="310" y2="260" stroke="#9C3A19" stroke-width="2"/>
+          <!-- Textura de punto gofrado / waffle sutil -->
+          <g stroke="rgba(255,255,255,0.2)" stroke-width="1.2">
+            <line x1="135" y1="190" x2="265" y2="190"/>
+            <line x1="135" y1="220" x2="265" y2="220"/>
+            <line x1="100" y1="290" x2="300" y2="290"/>
+            <line x1="100" y1="320" x2="300" y2="320"/>
+          </g>
+          <!-- Etiqueta de algodón orgánico cosida -->
+          <rect x="180" y="165" width="40" height="18" rx="2" fill="#FAF6EE" stroke="#1F4D36" stroke-width="1.2"/>
+          <text x="200" y="177" font-family="'Montserrat', sans-serif" font-size="7" font-weight="700" fill="#1E8E5A" text-anchor="middle">ECO·GOTS</text>
+        </g>
+      </svg>`;
+
+      // 7. Camisa de lino natural prelavado (arena con mangas dobladas sobre fondo claro)
+      const SVG_ECO_H01 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="linenLgt" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F7F2E7"/>
+            <stop offset="100%" stop-color="#E8DEC9"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo claro texturado -->
+        <rect width="400" height="500" fill="#FAF6ED"/>
+        <!-- Silueta camisa de lino con mangas remangadas -->
+        <g transform="translate(0, 15)">
+          <!-- Sombra -->
+          <path d="M140 90 L65 170 L95 270 L135 250 L135 410 L265 410 L265 250 L305 270 L335 170 L260 90 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Mangas enrolladas / dobladas con trabilla -->
+          <path d="M140 95 L65 175 L95 265 L135 245 L135 170 Z" fill="#DFD2BA" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="75" y="245" width="35" height="24" rx="2" fill="#EAE0CD" stroke="#1F4D36" stroke-width="2"/>
+          <path d="M260 95 L335 175 L305 265 L265 245 L265 170 Z" fill="#DFD2BA" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="290" y="245" width="35" height="24" rx="2" fill="#EAE0CD" stroke="#1F4D36" stroke-width="2"/>
+          <!-- Cuerpo de camisa -->
+          <path d="M135 95 L265 95 L265 405 C265 415, 135 415, 135 405 Z" fill="url(#linenLgt)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuello camisero y pie de cuello -->
+          <path d="M135 95 L175 125 L200 105 L225 125 L265 95 L200 78 Z" fill="#E2D4BB" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Botonadura central -->
+          <line x1="200" y1="105" x2="200" y2="405" stroke="#1F4D36" stroke-width="2"/>
+          <circle cx="200" cy="140" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="180" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="225" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="270" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="315" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="360" r="3.5" fill="#CBB696" stroke="#1F4D36" stroke-width="1.5"/>
+          <!-- Bolsillo en el pecho izquierdo -->
+          <rect x="215" y="160" width="38" height="42" rx="2" fill="#EAE0CD" stroke="#1F4D36" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 8. Pantalón chino de corte relajado (verde oliva sobre piedra clara)
+      const SVG_ECO_H02 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="stoneLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EAE3D5"/>
+            <stop offset="100%" stop-color="#DDD3C0"/>
+          </linearGradient>
+          <linearGradient id="chinoOlive" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#64764B"/>
+            <stop offset="100%" stop-color="#4C5C36"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo de losa de piedra clara -->
+        <rect width="400" height="500" fill="url(#stoneLight)"/>
+        <!-- Silueta de pantalón chino masculino relajado -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra -->
+          <path d="M152 70 L248 70 L258 130 L288 430 L220 430 L200 230 L180 430 L112 430 L142 130 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Pantalón chino -->
+          <path d="M150 70 L250 70 L260 130 L290 425 L222 425 L200 225 L178 425 L110 425 L140 130 Z" fill="url(#chinoOlive)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cintura y trabillas -->
+          <rect x="150" y="70" width="100" height="22" rx="3" fill="#445430" stroke="#1F4D36" stroke-width="2"/>
+          <line x1="170" y1="70" x2="170" y2="92" stroke="#1F4D36" stroke-width="1.8"/>
+          <line x1="200" y1="70" x2="200" y2="92" stroke="#1F4D36" stroke-width="1.8"/>
+          <line x1="230" y1="70" x2="230" y2="92" stroke="#1F4D36" stroke-width="1.8"/>
+          <!-- Bragueta y botón -->
+          <path d="M200 92 L200 175 C200 190, 188 190, 188 190" fill="none" stroke="#1F4D36" stroke-width="2"/>
+          <circle cx="200" cy="81" r="3.5" fill="#D2B588"/>
+          <!-- Bolsillos laterales sesgados -->
+          <line x1="156" y1="100" x2="170" y2="155" stroke="#1F4D36" stroke-width="2"/>
+          <line x1="244" y1="100" x2="230" y2="155" stroke="#1F4D36" stroke-width="2"/>
+          <!-- Dobladillo en bajos -->
+          <rect x="110" y="415" width="68" height="10" rx="1" fill="#3D4B2B" stroke="#1F4D36" stroke-width="1.8"/>
+          <rect x="222" y="415" width="68" height="10" rx="1" fill="#3D4B2B" stroke="#1F4D36" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 9. Polo de algodón orgánico (blanco doblado sobre madera clara)
+      const SVG_ECO_H03 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="ashWood" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F2ECE0"/>
+            <stop offset="50%" stop-color="#E7DEC9"/>
+            <stop offset="100%" stop-color="#DDD0B8"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo de madera clara escandinava con vetas -->
+        <rect width="400" height="500" fill="url(#ashWood)"/>
+        <line x1="0" y1="140" x2="400" y2="140" stroke="#CCBEA5" stroke-width="1.5"/>
+        <line x1="0" y1="280" x2="400" y2="280" stroke="#CCBEA5" stroke-width="1.5"/>
+        <line x1="0" y1="420" x2="400" y2="420" stroke="#CCBEA5" stroke-width="1.5"/>
+        <!-- Polo de pima orgánico blanco roto doblado -->
+        <g transform="translate(0, 10)">
+          <!-- Sombra -->
+          <rect x="95" y="150" width="215" height="235" rx="12" fill="rgba(31, 77, 54, 0.1)"/>
+          <!-- Polo doblado -->
+          <rect x="90" y="140" width="220" height="230" rx="10" fill="#FCFAF4" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Cuello de polo estructurado -->
+          <path d="M145 140 L180 180 L200 160 L220 180 L255 140 Z" fill="#F0EBE0" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Tapeta con dos botones -->
+          <rect x="188" y="160" width="24" height="65" fill="#F0EBE0" stroke="#1F4D36" stroke-width="2"/>
+          <circle cx="200" cy="180" r="3.5" fill="#E8DEC9" stroke="#1F4D36" stroke-width="1.5"/>
+          <circle cx="200" cy="205" r="3.5" fill="#E8DEC9" stroke="#1F4D36" stroke-width="1.5"/>
+          <!-- Líneas de doblado lateral de mangas -->
+          <line x1="125" y1="140" x2="125" y2="370" stroke="#D3C7AE" stroke-width="2"/>
+          <line x1="275" y1="140" x2="275" y2="370" stroke="#D3C7AE" stroke-width="2"/>
+          <!-- Dobladillo inferior cosido con doble pespunte -->
+          <line x1="90" y1="355" x2="310" y2="355" stroke="#D3C7AE" stroke-width="1.5" stroke-dasharray="4 2"/>
+        </g>
+      </svg>`;
+
+      // 10. Chaqueta de fibras recicladas con cierre (verde bosque sobre fondo neutro)
+      const SVG_ECO_H04 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="zipJacketForest" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#24513B"/>
+            <stop offset="100%" stop-color="#163827"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo neutro de estudio -->
+        <rect width="400" height="500" fill="#E8E2D7"/>
+        <!-- Chaqueta bomber / cazadora sostenible con cierre -->
+        <g transform="translate(0, 15)">
+          <!-- Sombra -->
+          <path d="M140 100 L70 160 L95 385 L135 370 L135 410 L265 410 L265 370 L305 385 L330 160 L260 100 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Mangas -->
+          <path d="M140 105 L70 165 L100 380 L135 365 L135 180 Z" fill="#1F4733" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M260 105 L330 165 L300 380 L265 365 L265 180 Z" fill="#1F4733" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Puños elásticos acanalados -->
+          <rect x="75" y="375" width="28" height="16" rx="2" fill="#132E20" stroke="#1F4D36" stroke-width="1.8"/>
+          <rect x="297" y="375" width="28" height="16" rx="2" fill="#132E20" stroke="#1F4D36" stroke-width="1.8"/>
+          <!-- Cuerpo de la chaqueta con cuello alto -->
+          <path d="M135 105 L265 105 L265 395 L135 395 Z" fill="url(#zipJacketForest)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuello alto estructurado -->
+          <rect x="160" y="85" width="80" height="24" rx="4" fill="#2A5C43" stroke="#1F4D36" stroke-width="2.2"/>
+          <!-- Cremallera frontal en contraste latón reciclado -->
+          <line x1="200" y1="85" x2="200" y2="405" stroke="#C8A663" stroke-width="3"/>
+          <!-- Tirador de cremallera -->
+          <rect x="196" y="145" width="8" height="16" rx="2" fill="#E2C17D" stroke="#1F4D36" stroke-width="1.5"/>
+          <!-- Bolsillos de ojal laterales -->
+          <line x1="148" y1="280" x2="175" y2="330" stroke="#1F4D36" stroke-width="2.5"/>
+          <line x1="252" y1="280" x2="225" y2="330" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Pretina elástica inferior -->
+          <rect x="135" y="395" width="130" height="18" fill="#132E20" stroke="#1F4D36" stroke-width="2"/>
+        </g>
+      </svg>`;
+
+      // 11. Bermuda de lino natural (arena sobre piedra clara)
+      const SVG_ECO_H05 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="stoneSlab" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EBE4D5"/>
+            <stop offset="100%" stop-color="#DCD1BD"/>
+          </linearGradient>
+          <linearGradient id="bermudaSand" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F2E9D4"/>
+            <stop offset="100%" stop-color="#DECFB3"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo de piedra clara -->
+        <rect width="400" height="500" fill="url(#stoneSlab)"/>
+        <!-- Bermuda de lino masculino -->
+        <g transform="translate(0, 30)">
+          <!-- Sombra -->
+          <path d="M148 70 L252 70 L260 120 L278 335 L215 335 L200 200 L185 335 L122 335 L140 120 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Bermuda -->
+          <path d="M145 70 L255 70 L262 120 L280 330 L216 330 L200 195 L184 330 L120 330 L138 120 Z" fill="url(#bermudaSand)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Pretina elástica con cordón de algodón crudo -->
+          <rect x="145" y="70" width="110" height="26" rx="4" fill="#D9C7A8" stroke="#1F4D36" stroke-width="2"/>
+          <line x1="145" y1="83" x2="255" y2="83" stroke="#B8A484" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <!-- Cordón de amarre central -->
+          <circle cx="193" cy="83" r="2.5" fill="#1F4D36"/>
+          <circle cx="207" cy="83" r="2.5" fill="#1F4D36"/>
+          <path d="M193 83 C190 105, 185 115, 182 125" fill="none" stroke="#FAF7F0" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M207 83 C210 105, 215 115, 218 125" fill="none" stroke="#FAF7F0" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Bolsillos laterales -->
+          <line x1="150" y1="102" x2="165" y2="155" stroke="#1F4D36" stroke-width="2"/>
+          <line x1="250" y1="102" x2="235" y2="155" stroke="#1F4D36" stroke-width="2"/>
+          <!-- Dobladillo en bajo de pierna -->
+          <line x1="120" y1="318" x2="184" y2="318" stroke="#1F4D36" stroke-width="1.8"/>
+          <line x1="216" y1="318" x2="280" y2="318" stroke="#1F4D36" stroke-width="1.8"/>
+        </g>
+      </svg>`;
+
+      // 12. Camiseta de algodón con estampado vegetal (verde hoja sobre fondo blanco)
+      const SVG_ECO_H06 = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+        <defs>
+          <linearGradient id="tshirtGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#72A54E"/>
+            <stop offset="100%" stop-color="#598B37"/>
+          </linearGradient>
+        </defs>
+        <!-- Fondo blanco lienzo natural -->
+        <rect width="400" height="500" fill="#FAF8F4"/>
+        <!-- Camiseta manga corta cuello redondo -->
+        <g transform="translate(0, 15)">
+          <!-- Sombra -->
+          <path d="M145 90 L65 155 L95 210 L135 195 L135 410 L265 410 L265 195 L305 210 L335 155 L255 90 Z" fill="rgba(31, 77, 54, 0.08)"/>
+          <!-- Mangas -->
+          <path d="M145 95 L65 155 L95 210 L135 195 Z" fill="#679A44" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M255 95 L335 155 L305 210 L265 195 Z" fill="#679A44" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuerpo -->
+          <path d="M135 95 L265 95 L265 405 L135 405 Z" fill="url(#tshirtGreen)" stroke="#1F4D36" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Cuello redondo elástico -->
+          <path d="M165 95 C175 120, 225 120, 235 95 Z" fill="#4B772E" stroke="#1F4D36" stroke-width="2.5"/>
+          <!-- Estampado vegetal botánico central con tinta al agua -->
+          <g transform="translate(200, 230)" stroke="#FAF5EB" stroke-width="2" fill="none">
+            <!-- Hoja grande de Monstera / Palma orgánica -->
+            <path d="M0 -50 C30 -30, 45 10, 0 55 C-45 10, -30 -30, 0 -50 Z"/>
+            <line x1="0" y1="-45" x2="0" y2="50"/>
+            <path d="M0 -25 C15 -20, 25 -10, 30 -5"/>
+            <path d="M0 -10 C18 -5, 30 5, 35 12"/>
+            <path d="M0 8 C18 15, 28 25, 30 35"/>
+            <path d="M0 -25 C-15 -20, -25 -10, -30 -5"/>
+            <path d="M0 -10 C-18 -5, -30 5, -35 12"/>
+            <path d="M0 8 C-18 15, -28 25, -30 35"/>
+          </g>
+          <!-- Leyenda sutil de estampado botánico -->
+          <text x="200" y="315" font-family="'Montserrat', sans-serif" font-size="8" font-weight="700" fill="#EBF4E5" letter-spacing="2" text-anchor="middle">BOTANICAL INK · ECOMODA</text>
+        </g>
+      </svg>`;
+
+      /* -------------------------------------------------------------
+         3. CATÁLOGO COMPLETO DE PRENDAS (12 PRENDAS: 6 MUJER / 6 HOMBRE)
+         Estrictamente prendas de vestir, sin accesorios.
+         ------------------------------------------------------------- */
+      const PRODUCTS = [
+        // --- SECCIÓN MUJER (6 PRENDAS CON MODELOS PROFESIONALES) ---
+        {
+          id: 'ECO-M01',
+          name: 'Blusa de algodón orgánico con mangas abullonadas',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M01',
+          material: '100% algodón orgánico certificado',
+          sizes: ['XS', 'S', 'M', 'L', 'XL'],
+          sizesRange: 'Tallas XS a XL',
+          color: 'Arena natural',
+          priceFormatted: 'S/ 95,00',
+          priceNumeric: 95.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'droplet',
+          isNew: false,
+          imageAlt: 'Modelo profesional con blusa de algodón orgánico color arena y mangas abullonadas',
+          imageSrc: '/assets/images/model_blouse_sand_1794001953433.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M01),
+          origin: 'Tejido ético en Chincha con certificación GOTS'
+        },
+        {
+          id: 'ECO-M02',
+          name: 'Vestido de lino reciclado con estampado botánico',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M02',
+          material: '70% lino, 30% fibra reciclada',
+          sizes: ['S', 'M', 'L'],
+          sizesRange: 'Tallas S a L',
+          color: 'Verde hoja',
+          priceFormatted: 'S/ 219,00',
+          priceNumeric: 219.00,
+          ecoTag: 'Fibra reciclada',
+          ecoIconType: 'recycle',
+          isNew: true,
+          imageAlt: 'Modelo luciendo vestido largo de lino reciclado verde hoja con detalles botánicos',
+          imageSrc: '/assets/images/model_dress_green_1794001954072.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M02),
+          origin: 'Confección artesanal en Lurín con tintes vegetales'
+        },
+        {
+          id: 'ECO-M03',
+          name: 'Pantalón palazzo de lino natural',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M03',
+          material: '100% lino europeo',
+          sizes: ['XS', 'S', 'M', 'L', 'XL'],
+          sizesRange: 'Tallas XS a XL',
+          color: 'Crema',
+          priceFormatted: 'S/ 165,00',
+          priceNumeric: 165.00,
+          ecoTag: 'Lino regenerativo',
+          ecoIconType: 'sun',
+          isNew: false,
+          imageAlt: 'Modelo profesional caminando con pantalón palazzo ancho crema de lino natural',
+          imageSrc: '/assets/images/model_palazzo_cream_1794001954163.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M03),
+          origin: 'Lino European Flax® tejido en Cañete'
+        },
+        {
+          id: 'ECO-M04',
+          name: 'Falda midi de algodón pima',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M04',
+          material: '100% algodón pima orgánico',
+          sizes: ['XS', 'S', 'M', 'L'],
+          sizesRange: 'Tallas XS a L',
+          color: 'Verde oliva',
+          priceFormatted: 'S/ 130,00',
+          priceNumeric: 130.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'butterfly',
+          isNew: false,
+          imageAlt: 'Modelo con falda midi verde oliva de tela fluida en algodón pima orgánico',
+          imageSrc: '/assets/images/model_skirt_olive_1794001968252.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M04),
+          origin: 'Algodón Pima peruano cultivado sin pesticidas'
+        },
+        {
+          id: 'ECO-M05',
+          name: 'Chaqueta ligera de fibras recicladas',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M05',
+          material: '100% fibra reciclada de botellas PET',
+          sizes: ['S', 'M', 'L', 'XL'],
+          sizesRange: 'Tallas S a XL',
+          color: 'Verde bosque',
+          priceFormatted: 'S/ 259,00',
+          priceNumeric: 259.00,
+          ecoTag: 'Fibra reciclada',
+          ecoIconType: 'recycle',
+          isNew: false,
+          imageAlt: 'Modelo con chaqueta ligera verde bosque confeccionada con fibras recicladas',
+          imageSrc: '/assets/images/model_jacket_forest_1794001968359.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M05),
+          origin: 'Hilado reciclado certificado GRS confeccionado en Lima'
+        },
+        {
+          id: 'ECO-M06',
+          name: 'Top de punto de algodón orgánico',
+          section: 'mujer',
+          sectionLabel: 'Mujer',
+          ref: 'ECO-M06',
+          material: '100% algodón orgánico',
+          sizes: ['XS', 'S', 'M', 'L'],
+          sizesRange: 'Tallas XS a L',
+          color: 'Terracota suave',
+          priceFormatted: 'S/ 79,00',
+          priceNumeric: 79.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'leaf',
+          isNew: true,
+          imageAlt: 'Modelo sonriente con top de punto fino terracota suave en algodón orgánico',
+          imageSrc: '/assets/images/model_top_terracotta_1794001968806.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_M06),
+          origin: 'Punto tejido en Arequipa con tintes de arcilla natural'
+        },
+
+        // --- SECCIÓN HOMBRE (6 PRENDAS CON MODELOS PROFESIONALES) ---
+        {
+          id: 'ECO-H01',
+          name: 'Camisa de lino natural prelavado',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H01',
+          material: '100% lino orgánico europeo',
+          sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+          sizesRange: 'Tallas S a XXL',
+          color: 'Arena natural',
+          priceFormatted: 'S/ 189,00',
+          priceNumeric: 189.00,
+          ecoTag: 'Lino regenerativo',
+          ecoIconType: 'sun',
+          isNew: false,
+          imageAlt: 'Modelo masculino profesional con camisa de lino beige y mangas remangadas',
+          imageSrc: '/assets/images/model_shirt_linen_1794001981998.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H01),
+          origin: 'Lino con certificación ecológica prelavado con agua tratada'
+        },
+        {
+          id: 'ECO-H02',
+          name: 'Pantalón chino de corte relajado',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H02',
+          material: '100% algodón pima orgánico',
+          sizes: ['28', '30', '32', '34', '36'],
+          sizesRange: 'Tallas 28 a 36',
+          color: 'Verde oliva tierra',
+          priceFormatted: 'S/ 175,00',
+          priceNumeric: 175.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'leaf',
+          isNew: false,
+          imageAlt: 'Modelo masculino con pantalón chino corte relajado verde oliva tierra',
+          imageSrc: '/assets/images/model_chino_olive_1794001982939.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H02),
+          origin: 'Hilado orgánico peinado de Chincha'
+        },
+        {
+          id: 'ECO-H03',
+          name: 'Polo de algodón orgánico',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H03',
+          material: '100% algodón orgánico certificado',
+          sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+          sizesRange: 'Tallas S a XXL',
+          color: 'Blanco roto',
+          priceFormatted: 'S/ 85,00',
+          priceNumeric: 85.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'droplet',
+          isNew: false,
+          imageAlt: 'Modelo con polo de pima orgánico blanco roto de diseño atemporal',
+          imageSrc: '/assets/images/model_polo_white_1794001983140.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H03),
+          origin: 'Algodón sin blanqueadores químicos agresivos'
+        },
+        {
+          id: 'ECO-H04',
+          name: 'Chaqueta de fibras recicladas con cierre',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H04',
+          material: '100% fibra reciclada',
+          sizes: ['M', 'L', 'XL', 'XXL'],
+          sizesRange: 'Tallas M a XXL',
+          color: 'Verde bosque',
+          priceFormatted: 'S/ 279,00',
+          priceNumeric: 279.00,
+          ecoTag: 'Fibra reciclada',
+          ecoIconType: 'recycle',
+          isNew: true,
+          imageAlt: 'Modelo luciendo chaqueta con cierre verde bosque de fibra reciclada',
+          imageSrc: '/assets/images/model_jacket_men_1794001999947.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H04),
+          origin: 'Botellas PET recicladas y cierre metálico recuperado'
+        },
+        {
+          id: 'ECO-H05',
+          name: 'Bermuda de lino natural',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H05',
+          material: '80% lino, 20% algodón orgánico',
+          sizes: ['28', '30', '32', '34', '36'],
+          sizesRange: 'Tallas 28 a 36',
+          color: 'Arena',
+          priceFormatted: 'S/ 149,00',
+          priceNumeric: 149.00,
+          ecoTag: 'Lino regenerativo',
+          ecoIconType: 'sun',
+          isNew: false,
+          imageAlt: 'Modelo en look de verano con bermuda de lino natural color arena',
+          imageSrc: '/assets/images/model_bermuda_sand_1794002000689.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H05),
+          origin: 'Mezcla transpirable confeccionada en Piura'
+        },
+        {
+          id: 'ECO-H06',
+          name: 'Camiseta de algodón con estampado vegetal',
+          section: 'hombre',
+          sectionLabel: 'Hombre',
+          ref: 'ECO-H06',
+          material: '100% algodón orgánico con tinta al agua',
+          sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+          sizesRange: 'Tallas S a XXL',
+          color: 'Verde hoja',
+          priceFormatted: 'S/ 89,00',
+          priceNumeric: 89.00,
+          ecoTag: 'Algodón orgánico',
+          ecoIconType: 'butterfly',
+          isNew: false,
+          imageAlt: 'Modelo con camiseta verde hoja y estampado botánico vegetal con tinta al agua',
+          imageSrc: '/assets/images/model_tee_botanical_1794002001918.jpg',
+          fallbackSvg: svgToDataUri(SVG_ECO_H06),
+          origin: 'Serigrafía artesanal con tintes base de agua y hojas'
+        }
+      ];
+
+      /* -------------------------------------------------------------
+         4. ESTADO EN MEMORIA (Sin localStorage / sessionStorage)
+         ------------------------------------------------------------- */
+      let currentFilter = 'todos';
+      let activeProduct = null;
+      let selectedSize = '';
+
+      // Referencias del DOM
+      const gridContainer = document.getElementById('catalog-grid');
+      const counterEl = document.getElementById('visible-count');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+
+      // Referencias del Modal
+      const modal = document.getElementById('product-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const modalGender = document.getElementById('modal-gender');
+      const modalRef = document.getElementById('modal-ref');
+      const modalEcoIcon = document.getElementById('modal-eco-icon');
+      const modalEcoText = document.getElementById('modal-eco-text');
+      const modalMaterial = document.getElementById('modal-material');
+      const modalColor = document.getElementById('modal-color');
+      const modalSizesText = document.getElementById('modal-sizes-text');
+      const modalOrigin = document.getElementById('modal-origin');
+      const modalSizesChips = document.getElementById('modal-sizes-chips');
+      const modalPrice = document.getElementById('modal-price');
+      const modalWhatsAppBtn = document.getElementById('modal-whatsapp-btn');
+
+      /* -------------------------------------------------------------
+         5. RENDERIZADO DE LAS TARJETAS DEL CATÁLOGO
+         ------------------------------------------------------------- */
+      function renderCards(filter) {
+        if (!gridContainer) return;
+
+        // Filtrar productos
+        const filteredList = PRODUCTS.filter(function (item) {
+          if (filter === 'todos') return true;
+          return item.section === filter;
+        });
+
+        // Actualizar contador
+        if (counterEl) {
+          counterEl.textContent = filteredList.length;
+        }
+
+        // Transición suave
+        gridContainer.style.opacity = '0';
+        gridContainer.style.transform = 'translateY(6px)';
+
+        setTimeout(function () {
+          gridContainer.innerHTML = '';
+
+          filteredList.forEach(function (product) {
+            const card = document.createElement('article');
+            card.className = 'product-card';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Ver detalles de ${product.name}, precio ${product.priceFormatted}`);
+            card.dataset.id = product.id;
+
+            // Insignia de nuevo
+            const newBadgeHtml = product.isNew 
+              ? `<span class="card-new-badge">Nuevo</span>` 
+              : '';
+
+            // Icono ecológico
+            const ecoIconSvg = ECO_ICONS[product.ecoIconType] || ECO_ICONS.leaf;
+
+            card.innerHTML = `
+              <!-- ZONA 1: Foto proporción 4:5 dentro de marco beige fino -->
+              <div class="card-media-zone">
+                ${newBadgeHtml}
+                <img 
+                  src="${product.imageSrc}" 
+                  alt="${product.imageAlt}" 
+                  class="card-media-img" 
+                  loading="lazy" 
+                  onerror="if(this.src!=='${product.fallbackSvg}'){this.src='${product.fallbackSvg}';}"
+                />
+                <span class="card-eco-tag">
+                  ${ecoIconSvg}
+                  <span>${product.ecoTag}</span>
+                </span>
+                <span class="card-zoom-hint" title="Ver prenda ampliada">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </span>
+              </div>
+
+              <!-- ZONA 2: Nombre (negrita, verde bosque, máx 2 líneas) y descripción breve -->
+              <div class="card-content-zone">
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-short-desc">${product.material} · Color ${product.color}</p>
+              </div>
+
+              <!-- ZONA 3: Sección, REFERENCIA, tallas y precio en terracota en negrita -->
+              <div class="card-footer-zone">
+                <div class="card-meta-row">
+                  <span class="product-gender-badge">${product.sectionLabel}</span>
+                  <span class="product-ref">REF: ${product.ref}</span>
+                </div>
+                <div class="card-bottom-row">
+                  <span class="product-sizes-text">${product.sizesRange}</span>
+                  <span class="product-price">${product.priceFormatted}</span>
+                </div>
+              </div>
+            `;
+
+            // Eventos para abrir modal
+            card.addEventListener('click', function () {
+              openProductModal(product);
+            });
+
+            card.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProductModal(product);
+              }
+            });
+
+            gridContainer.appendChild(card);
+          });
+
+          gridContainer.style.opacity = '1';
+          gridContainer.style.transform = 'translateY(0)';
+        }, 120);
+      }
+
+      /* -------------------------------------------------------------
+         6. FILTRADO DINÁMICO (MUJER / HOMBRE / TODOS)
+         ------------------------------------------------------------- */
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filterValue = this.getAttribute('data-filter');
+          if (!filterValue || filterValue === currentFilter) return;
+
+          currentFilter = filterValue;
+
+          // Actualizar clases de botones
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+
+          // Volver a renderizar
+          renderCards(currentFilter);
+        });
+      });
+
+      /* -------------------------------------------------------------
+         7. GESTIÓN DEL MODAL INTERACTIVO
+         ------------------------------------------------------------- */
+      function openProductModal(product) {
+        activeProduct = product;
+        selectedSize = product.sizes[0] || '';
+
+        // Llenar contenido
+        modalImg.src = product.imageSrc;
+        modalImg.alt = product.imageAlt;
+        modalImg.onerror = function() {
+          if (this.src !== product.fallbackSvg) {
+            this.src = product.fallbackSvg;
+          }
+        };
+        modalTitle.textContent = product.name;
+        modalGender.textContent = product.sectionLabel;
+        modalRef.textContent = `REF: ${product.ref}`;
+
+        modalEcoIcon.innerHTML = ECO_ICONS[product.ecoIconType] || ECO_ICONS.leaf;
+        modalEcoText.textContent = product.ecoTag;
+
+        modalMaterial.textContent = product.material;
+        modalColor.textContent = product.color;
+        modalSizesText.textContent = product.sizesRange;
+        modalOrigin.textContent = product.origin;
+        modalPrice.textContent = product.priceFormatted;
+
+        // Generar chips de tallas seleccionables
+        modalSizesChips.innerHTML = '';
+        product.sizes.forEach(function (sz, index) {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'size-chip' + (index === 0 ? ' is-selected' : '');
+          chip.textContent = sz;
+          chip.setAttribute('role', 'radio');
+          chip.setAttribute('aria-checked', index === 0 ? 'true' : 'false');
+
+          chip.addEventListener('click', function () {
+            selectedSize = sz;
+            modalSizesChips.querySelectorAll('.size-chip').forEach(function (c) {
+              c.classList.remove('is-selected');
+              c.setAttribute('aria-checked', 'false');
+            });
+            chip.classList.add('is-selected');
+            chip.setAttribute('aria-checked', 'true');
+            updateWhatsAppLink();
+          });
+
+          modalSizesChips.appendChild(chip);
+        });
+
+        // Actualizar enlace directo a WhatsApp
+        updateWhatsAppLink();
+
+        // Mostrar modal
+        modal.classList.add('is-active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        // Enfocar botón de cierre para accesibilidad
+        modalCloseBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        activeProduct = null;
+      }
+
+      // Cerrar al hacer clic en el botón de cerrar
+      modalCloseBtn.addEventListener('click', closeModal);
+
+      // Cerrar al hacer clic fuera del diálogo
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Cerrar con tecla Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+          closeModal();
+        }
+      });
+
+      /* -------------------------------------------------------------
+         8. ENLACE A WHATSAPP CON MENSAJE PRE-CONFIGURADO
+         Formato: "Hola EcoModa, deseo consultar por la prenda: [Prenda] (REF: [REF], Talla: [Talla], Precio: [Precio])"
+         ------------------------------------------------------------- */
+      function updateWhatsAppLink() {
+        if (!activeProduct || !modalWhatsAppBtn) return;
+
+        const message = `Hola EcoModa, deseo consultar por la prenda: ${activeProduct.name} (REF: ${activeProduct.ref}, Talla: ${selectedSize}, Precio: ${activeProduct.priceFormatted})`;
+        const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+
+        modalWhatsAppBtn.href = whatsappUrl;
+      }
+
+      /* -------------------------------------------------------------
+         9. INICIALIZACIÓN AL CARGAR LA PÁGINA
+         ------------------------------------------------------------- */
+      document.addEventListener('DOMContentLoaded', function () {
+        renderCards(currentFilter);
+      });
+
+      // Ejecución inmediata de respaldo si el DOM ya está listo
+      if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        renderCards(currentFilter);
+      }
+
+    })();
+  </script>
+</body>
+</html>

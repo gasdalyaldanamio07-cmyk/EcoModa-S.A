@@ -1,0 +1,2495 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoModa | Moda Sostenible, Estilo con Propósito</title>
+  <meta name="description" content="EcoModa: prendas con materiales sostenibles, estilo y calidad. Ropa que se ve bien, dura más y cuida el planeta en Lima, Arequipa, Trujillo y Piura." />
+  
+  <!-- Tipografía: Montserrat (700, 800) y Open Sans (400, 600) desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* -------------------------------------------------------------
+       IDENTIDAD VISUAL & PALETA OFICIAL:
+       - Verde bosque: #2E5E3E (principal, títulos y botones secundarios)
+       - Beige arena: #E8DCC4 (fondos alternos)
+       - Blanco: #FFFFFF (fondo general)
+       - Terracota: #B5573A (acento: botones de acción, enlaces y hashtag)
+       ------------------------------------------------------------- */
+    :root {
+      --color-verde: #2E5E3E;
+      --color-verde-dark: #1f422b;
+      --color-beige: #E8DCC4;
+      --color-beige-soft: #F9F7F2;
+      --color-blanco: #FFFFFF;
+      --color-terracota: #B5573A;
+      --color-terracota-dark: #9c452c;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 16px;
+      color: var(--color-verde);
+      background-color: var(--color-blanco);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Accesibilidad: foco visible */
+    :focus-visible {
+      outline: 2px solid var(--color-terracota);
+      outline-offset: 3px;
+    }
+
+    /* Respeto estricto a preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Contenedor centralizado */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* -------------------------------------------------------------
+       1. ENCABEZADO FIJO
+       ------------------------------------------------------------- */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--color-beige);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      color: var(--color-verde);
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-terracota);
+      border-bottom-color: var(--color-terracota);
+    }
+
+    .btn-terracota {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-terracota);
+      color: var(--color-blanco);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-terracota:hover {
+      background-color: var(--color-terracota-dark);
+    }
+
+    .btn-verde-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: var(--color-verde);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 4px;
+      border: 2px solid var(--color-verde);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-verde-outline:hover {
+      background-color: var(--color-verde);
+      color: var(--color-blanco);
+    }
+
+    .btn-verde {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-verde);
+      color: var(--color-blanco);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      width: 100%;
+    }
+
+    .btn-verde:hover {
+      background-color: var(--color-verde-dark);
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--color-verde);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-verde);
+      transition: transform 0.2s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      background-color: var(--color-blanco);
+      border-top: 1px solid var(--color-beige);
+      padding: 1rem 1.25rem 1.5rem;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-nav-link {
+      display: block;
+      padding: 0.6rem 0;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(232, 220, 196, 0.4);
+    }
+
+    /* Espaciador del header */
+    .header-spacer {
+      height: 76px;
+    }
+
+    /* -------------------------------------------------------------
+       2. HERO CON VIDEO DE FONDO, CAPA VERDE (60%) Y FLECHAS ANIMADAS
+       ------------------------------------------------------------- */
+    @keyframes bounceSubtle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(7px); }
+    }
+    @keyframes nudgeRight {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(6px); }
+    }
+    .animate-bounce-arrow {
+      animation: bounceSubtle 1.8s infinite ease-in-out;
+    }
+    .animate-nudge-arrow {
+      animation: nudgeRight 1.5s infinite ease-in-out;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 0.35rem;
+    }
+
+    .hero-section {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+      background-color: var(--color-verde);
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-beige);
+      color: var(--color-blanco);
+      padding: 4rem 0 5rem;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(46, 94, 62, 0.60);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-beige);
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      color: var(--color-blanco);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-hero-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.15);
+      color: var(--color-blanco);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 4px;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-hero-outline:hover {
+      background-color: var(--color-blanco);
+      color: var(--color-verde);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-stat-num {
+      display: block;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-blanco);
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+    }
+
+    .hero-scroll-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .hero-scroll-indicator:hover .hero-scroll-btn {
+      background-color: var(--color-terracota);
+      border-color: var(--color-blanco);
+      transform: scale(1.1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video-bg {
+        display: none !important;
+      }
+      .animate-bounce-arrow,
+      .animate-nudge-arrow {
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+
+    .image-caption {
+      padding: 0.6rem 1rem;
+      background-color: var(--color-beige);
+      font-size: 0.75rem;
+      color: var(--color-verde);
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--color-verde);
+    }
+
+    /* -------------------------------------------------------------
+       3. "POR QUÉ ECOMODA"
+       ------------------------------------------------------------- */
+    .section-standard {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--color-beige);
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-terracota);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      color: var(--color-verde);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: rgba(46, 94, 62, 0.85);
+    }
+
+    .three-blocks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .pillar-block {
+      border-top: 4px solid var(--color-verde);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pillar-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-terracota);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .pillar-title {
+      font-size: 1.25rem;
+      color: var(--color-verde);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-text {
+      font-size: 0.925rem;
+      color: rgba(46, 94, 62, 0.85);
+      line-height: 1.6;
+    }
+
+    .pillar-footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(232, 220, 196, 0.7);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(46, 94, 62, 0.7);
+    }
+
+    /* -------------------------------------------------------------
+       4. SECCIÓN CATÁLOGO INTERACTIVO DINÁMICO (CARRUSEL DE 3 PASOS)
+       ------------------------------------------------------------- */
+    .section-beige {
+      background-color: var(--color-beige-soft);
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(46, 94, 62, 0.2);
+    }
+
+    .catalog-carousel-container {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .catalog-viewport {
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 0.5rem 0.25rem;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    .catalog-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 500ms cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
+    }
+
+    .catalog-step-card {
+      flex: 0 0 calc((100% - (2 * 1.5rem)) / 3);
+      min-width: 0;
+      background: var(--color-blanco);
+      border: 1.5px solid var(--color-beige);
+      border-radius: 16px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .catalog-step-card:hover {
+      border-color: #cfbe9b;
+      box-shadow: 0 8px 24px -6px rgba(46, 94, 62, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1023px) {
+      .catalog-step-card {
+        flex: 0 0 calc((100% - 1.5rem) / 2);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .catalog-step-card {
+        flex: 0 0 86%;
+        margin-right: 0.25rem;
+      }
+      .catalog-track {
+        gap: 1rem;
+      }
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.85rem;
+    }
+
+    .step-tag-pill {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--color-terracota);
+      text-transform: uppercase;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    .step-counter-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--color-beige-soft);
+      border: 1px solid var(--color-beige);
+      border-radius: 9999px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .step-arrow-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-verde);
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0;
+      transition: background 0.15s;
+    }
+
+    .step-arrow-btn:hover {
+      background: var(--color-beige);
+    }
+
+    .step-counter-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-verde);
+      min-width: 2rem;
+      text-align: center;
+    }
+
+    /* Contenedor 4:5 para marcador de imágenes */
+    .card-photo-placeholder {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(145deg, #f0ebd9 0%, #e5d7be 100%);
+      border-radius: 12px;
+      border: 1px solid rgba(232, 220, 196, 0.7);
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      text-align: center;
+      user-select: none;
+    }
+
+    .card-photo-watermark {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.2rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--color-verde);
+    }
+
+    .card-photo-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--color-verde);
+      margin-bottom: 0.5rem;
+      opacity: 0.85;
+    }
+
+    .card-photo-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-verde);
+      line-height: 1.2;
+    }
+
+    .card-photo-ratio {
+      font-size: 0.75rem;
+      color: rgba(46, 94, 62, 0.75);
+      margin-top: 0.25rem;
+    }
+
+    .card-text-block {
+      margin-bottom: 1rem;
+      min-height: 4.5rem;
+    }
+
+    .card-garment-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--color-verde);
+      line-height: 1.25;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-garment-desc {
+      font-size: 0.85rem;
+      color: rgba(46, 94, 62, 0.85);
+      line-height: 1.4;
+    }
+
+    /* Grilla de 4 opciones 2x2 */
+    .card-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .card-option-btn {
+      appearance: none;
+      background: var(--color-blanco);
+      border: 1px solid var(--color-beige);
+      border-radius: 8px;
+      padding: 0.5rem;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-verde);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-option-btn:hover:not(.active) {
+      border-color: var(--color-verde);
+      background: rgba(46, 94, 62, 0.05);
+    }
+
+    .card-option-btn.active {
+      background-color: var(--color-verde);
+      color: var(--color-blanco);
+      border-color: var(--color-verde);
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(46, 94, 62, 0.25);
+    }
+
+    /* Flechas en extremos del carrusel */
+    .catalog-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-blanco);
+      border: 1.5px solid var(--color-beige);
+      color: var(--color-verde);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(46, 94, 62, 0.12);
+      transition: all 0.2s ease;
+    }
+
+    .catalog-nav-arrow:hover {
+      background: var(--color-verde);
+      color: var(--color-blanco);
+      border-color: var(--color-verde);
+    }
+
+    .catalog-nav-arrow.prev {
+      left: -1rem;
+    }
+
+    .catalog-nav-arrow.next {
+      right: -1rem;
+    }
+
+    @media (max-width: 767px) {
+      .catalog-nav-arrow.prev { left: 0.25rem; }
+      .catalog-nav-arrow.next { right: 0.25rem; }
+    }
+
+    /* Puntos indicadores */
+    .catalog-dots-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .catalog-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background-color: var(--color-beige);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .catalog-dot.active {
+      background-color: var(--color-verde);
+      width: 28px;
+    }
+
+    .catalog-status-note {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: rgba(46, 94, 62, 0.7);
+    }
+
+    /* Resumen "Tu look EcoModa" y botón WhatsApp */
+    .look-summary-box {
+      margin-top: 2rem;
+      background: var(--color-blanco);
+      border: 1.5px solid var(--color-beige);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .look-summary-box {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .look-summary-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .look-line-cat {
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-terracota);
+      display: inline-block;
+      min-width: 75px;
+    }
+
+    .look-line-title {
+      font-weight: 700;
+      color: var(--color-verde);
+    }
+
+    .look-line-desc {
+      font-size: 0.8rem;
+      color: rgba(46, 94, 62, 0.75);
+    }
+
+    .btn-look-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: var(--color-terracota);
+      color: var(--color-blanco);
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(181, 87, 58, 0.28);
+      white-space: nowrap;
+    }
+
+    .btn-look-whatsapp:hover {
+      background-color: var(--color-terracota-dark);
+      transform: translateY(-2px);
+    }
+
+    .outfit-hashtag-box {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-beige);
+      text-align: center;
+    }
+
+    .hashtag {
+      color: var(--color-terracota);
+      font-weight: 800;
+      font-size: 1.35rem;
+      display: inline-block;
+      margin: 0.25rem 0;
+    }
+
+    /* -------------------------------------------------------------
+       5. COLECCIÓN (Nueva línea masculina y Ropa que dura)
+       ------------------------------------------------------------- */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .collection-card {
+      border: 2px solid var(--color-verde);
+      border-radius: 4px;
+      background-color: var(--color-blanco);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .card-img-wrap {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      background-color: var(--color-beige-soft);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--color-blanco);
+      border: 1px solid var(--color-verde);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-verde);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      color: var(--color-verde);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-desc {
+      font-size: 0.925rem;
+      color: rgba(46, 94, 62, 0.85);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .card-footer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       6. BLOQUE BEIGE DE SOSTENIBILIDAD
+       ------------------------------------------------------------- */
+    .table-container {
+      background-color: var(--color-blanco);
+      border: 2px solid var(--color-verde);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .table-header {
+      background-color: var(--color-verde);
+      color: var(--color-blanco);
+      padding: 1rem 1.25rem;
+    }
+
+    .verification-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .verification-table th, 
+    .verification-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--color-beige);
+      font-size: 0.9rem;
+    }
+
+    .verification-table th {
+      background-color: var(--color-beige-soft);
+      font-weight: 700;
+      color: var(--color-verde);
+      width: 35%;
+      vertical-align: top;
+    }
+
+    .verification-table tr:last-child td,
+    .verification-table tr:last-child th {
+      border-bottom: none;
+    }
+
+    .operational-box {
+      background-color: var(--color-blanco);
+      border: 1px solid var(--color-verde);
+      padding: 1.25rem;
+      border-radius: 4px;
+    }
+
+    /* -------------------------------------------------------------
+       7. CIUDADES
+       ------------------------------------------------------------- */
+    .cities-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .city-card {
+      border: 2px solid var(--color-verde);
+      border-radius: 4px;
+      padding: 1.5rem;
+      background-color: var(--color-blanco);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+
+    .city-card:hover {
+      border-color: var(--color-terracota);
+    }
+
+    .city-kicker {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--color-terracota);
+      margin-bottom: 0.5rem;
+    }
+
+    .city-name {
+      font-size: 1.5rem;
+      color: var(--color-verde);
+      margin-bottom: 0.75rem;
+    }
+
+    .city-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(46, 94, 62, 0.9);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .city-footer {
+      font-size: 0.75rem;
+      color: rgba(46, 94, 62, 0.7);
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-beige);
+    }
+
+    /* -------------------------------------------------------------
+       8. SUSCRIPCIÓN
+       ------------------------------------------------------------- */
+    .form-box {
+      background-color: var(--color-blanco);
+      border: 2px solid var(--color-verde);
+      border-radius: 4px;
+      padding: 1.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-verde);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: inherit;
+      font-size: 0.875rem;
+      border: 1px solid var(--color-beige);
+      border-radius: 3px;
+      color: var(--color-verde);
+      background-color: var(--color-blanco);
+    }
+
+    .input-with-prefix {
+      display: flex;
+    }
+
+    .prefix-51 {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 0.9rem;
+      background-color: var(--color-beige-soft);
+      border: 1px solid var(--color-beige);
+      border-right: none;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 3px 0 0 3px;
+      color: var(--color-verde);
+    }
+
+    .input-with-prefix .form-input {
+      border-radius: 0 3px 3px 0;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      margin-top: 0.25rem;
+      accent-color: var(--color-terracota);
+      width: 1rem;
+      height: 1rem;
+      cursor: pointer;
+    }
+
+    .checkbox-label {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--color-verde);
+      cursor: pointer;
+      line-height: 1.4;
+    }
+
+    .legal-notice {
+      background-color: var(--color-beige-soft);
+      border: 1px solid var(--color-beige);
+      padding: 1rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      color: rgba(46, 94, 62, 0.85);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-link {
+      color: var(--color-terracota);
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .alert-error {
+      padding: 0.75rem 1rem;
+      background-color: #fdf2f2;
+      border-left: 4px solid var(--color-terracota);
+      color: var(--color-terracota);
+      font-size: 0.825rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border-radius: 3px;
+      display: none;
+    }
+
+    .alert-success {
+      padding: 0.75rem 1rem;
+      background-color: #f0fdf4;
+      border-left: 4px solid var(--color-verde);
+      color: var(--color-verde);
+      font-size: 0.825rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border-radius: 3px;
+      display: none;
+    }
+
+    /* -------------------------------------------------------------
+       9. PIE DE PÁGINA EN VERDE BOSQUE (#2E5E3E)
+       ------------------------------------------------------------- */
+    .footer {
+      background-color: var(--color-verde);
+      color: var(--color-blanco);
+      padding: 4rem 0 2.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      color: var(--color-beige);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .footer-col-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-blanco);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .footer-link-list {
+      list-style: none;
+    }
+
+    .footer-link-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link-list a, .footer-modal-trigger {
+      font-size: 0.8rem;
+      color: var(--color-beige);
+      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .footer-link-list a:hover, .footer-modal-trigger:hover {
+      color: var(--color-blanco);
+    }
+
+    .footer-legal-bar {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .consumer-law-text {
+      font-size: 0.825rem;
+      color: var(--color-beige);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .footer-copy-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* -------------------------------------------------------------
+       10. BOTÓN FLOTANTE DE WHATSAPP EN TERRACOTA (#B5573A)
+       ------------------------------------------------------------- */
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-color: var(--color-terracota);
+      color: var(--color-blanco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .whatsapp-floating:hover {
+      background-color: var(--color-terracota-dark);
+      transform: scale(1.06);
+    }
+
+    .whatsapp-floating svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    /* MODAL SIMPLE */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--color-blanco);
+      border: 2px solid var(--color-verde);
+      border-radius: 4px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 1.75rem;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--color-beige);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--color-verde);
+      cursor: pointer;
+    }
+
+    /* -------------------------------------------------------------
+       REQUISITOS TÉCNICOS: BREAKPOINTS EN 520px Y 860px
+       ------------------------------------------------------------- */
+    @media (min-width: 520px) {
+      .hero-actions {
+        flex-direction: row;
+      }
+      .outfit-card {
+        padding: 2rem;
+      }
+      .outfit-summary {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-links-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-copy-row {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .nav-desktop {
+        display: flex;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+      }
+      .hero-title {
+        font-size: 2.75rem;
+      }
+      .three-blocks-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .outfit-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cities-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 5fr 7fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ENCABEZADO FIJO -->
+  <header class="header">
+    <div class="container header-inner">
+      
+      <!-- LOGO oficial encabezado (versión más pequeña) -->
+      <a href="#" class="logo-link" aria-label="EcoModa, volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="EcoModa, moda sostenible, estilo con propósito" style="height: 44px; width: auto;">
+          <g fill="#2E5E3E">
+            <path d="M430 118 C398 110 386 78 400 46 C426 72 436 96 430 118 Z"/>
+            <path d="M430 118 C452 102 480 92 494 60 C468 66 444 88 430 118 Z"/>
+            <path d="M430 118 L430 92" stroke="#2E5E3E" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <text x="18" y="126" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="74" letter-spacing="-1" fill="#2E5E3E">Eco<tspan fill="#B5573A">Moda</tspan></text>
+          <text x="22" y="162" font-family="Open Sans, Arial, sans-serif" font-weight="600" font-size="17" fill="#2E5E3E">Moda sostenible, estilo con propósito</text>
+        </svg>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="#por-que-ecomoda" class="nav-link">Por qué EcoModa</a>
+        <a href="#armar-outfit" class="nav-link">Arma tu outfit</a>
+        <a href="#coleccion" class="nav-link">Colección</a>
+        <a href="#sostenibilidad" class="nav-link">Sostenibilidad</a>
+        <a href="#ciudades" class="nav-link">Ciudades</a>
+      </nav>
+
+      <!-- Botón terracota "Suscríbete" y toggle móvil -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="#suscribete" class="btn-terracota">Suscríbete</a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir o cerrar menú móvil">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#por-que-ecomoda" class="mobile-nav-link" onclick="toggleMenu()">Por qué EcoModa</a>
+      <a href="#armar-outfit" class="mobile-nav-link" onclick="toggleMenu()">Arma tu outfit</a>
+      <a href="#coleccion" class="mobile-nav-link" onclick="toggleMenu()">Colección</a>
+      <a href="#sostenibilidad" class="mobile-nav-link" onclick="toggleMenu()">Sostenibilidad</a>
+      <a href="#ciudades" class="mobile-nav-link" onclick="toggleMenu()">Ciudades</a>
+      <a href="#suscribete" class="mobile-nav-link" style="color: var(--color-terracota); font-weight: 700;" onclick="toggleMenu()">Suscríbete</a>
+    </div>
+  </header>
+
+  <div class="header-spacer" aria-hidden="true"></div>
+
+  <main>
+    <!-- 2. HERO CON VIDEO DE FONDO, CAPA VERDE (60%) Y FLECHAS ANIMADAS -->
+    <section class="hero-section" aria-label="Presentación principal EcoModa">
+      <!-- Video de fondo a pantalla completa con object-fit: cover -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        class="hero-video-bg"
+        aria-hidden="true"
+      >
+        <source src="/hero_video.mp4" type="video/mp4">
+        <source src="/WhatsApp_Video_2026-11-06_at_12_13_34_AM_1.mp4" type="video/mp4">
+        <source src="/assets/aistudio/WhatsApp_Video_2026-11-06_at_12.13.34_AM__1__e2499afa.mp4" type="video/mp4">
+      </video>
+
+      <!-- Capa verde bosque (#2E5E3E) con 60% de opacidad -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          <span>Trazabilidad Verídica · Hecho en Perú</span>
+        </div>
+        <h1 class="hero-title">¿Tu clóset tiene prendas que no sabes de dónde vienen?</h1>
+        <p class="hero-subtitle">
+          EcoModa son prendas con materiales sostenibles, estilo y calidad. Ropa que se ve bien, dura más y cuida el planeta.
+        </p>
+        <div class="hero-actions">
+          <a href="#coleccion" class="btn-terracota">
+            <span>Descubre la colección</span>
+            <span class="animate-nudge-arrow">→</span>
+          </a>
+          <a href="#por-que-ecomoda" class="btn-hero-outline">
+            <span>Por qué EcoModa</span>
+            <span style="display: inline-block; margin-left: 0.35rem;">↓</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num">100%</span>
+            <span class="hero-stat-label">Fibras certificadas</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">0</span>
+            <span class="hero-stat-label">Plásticos de un solo uso</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">4</span>
+            <span class="hero-stat-label">Ciudades en Perú</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flecha animada de scroll hacia abajo -->
+      <a href="#por-que-ecomoda" class="hero-scroll-indicator" aria-label="Desplazarse a la siguiente sección">
+        <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Explorar</span>
+        <div class="hero-scroll-btn">
+          <span class="animate-bounce-arrow" style="font-size: 1.1rem; line-height: 1;">↓</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- 3. "POR QUÉ ECOMODA" -->
+    <section id="por-que-ecomoda" class="section-standard">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Compromiso Honesto</span>
+          <h2 class="section-title">Por qué EcoModa</h2>
+          <p class="section-desc">
+            No hacemos afirmaciones de sostenibilidad sin respaldo técnico. Nuestras prendas se construyen sobre tres pilares transparentes.
+          </p>
+        </div>
+
+        <div class="three-blocks-grid">
+          <!-- Bloque 1 -->
+          <div class="pillar-block">
+            <div>
+              <span class="pillar-num">Pilar 01</span>
+              <h3 class="pillar-title">Materiales sostenibles</h3>
+              <p class="pillar-text">
+                Algodón pima orgánico peruano con certificación GOTS, lino europeo de bajo consumo hídrico y tintes botánicos libres de sustancias tóxicas. Cada fibra protege los suelos y cuida la salud de tu piel.
+              </p>
+            </div>
+            <div class="pillar-footer">Trazabilidad desde el valle hasta el telar</div>
+          </div>
+
+          <!-- Bloque 2 -->
+          <div class="pillar-block">
+            <div>
+              <span class="pillar-num">Pilar 02</span>
+              <h3 class="pillar-title">Estilo y calidad</h3>
+              <p class="pillar-text">
+                Patronaje contemporáneo y atemporal que trasciende las temporadas aceleradas del fast fashion. Costuras reforzadas dobles y acabados de precisión para prendas que duran años en tu armario.
+              </p>
+            </div>
+            <div class="pillar-footer">Ropa concebida para perdurar</div>
+          </div>
+
+          <!-- Bloque 3 -->
+          <div class="pillar-block">
+            <div>
+              <span class="pillar-num">Pilar 03</span>
+              <h3 class="pillar-title">Producción responsable</h3>
+              <p class="pillar-text">
+                Talleres éticos locales en Lima y regiones, con condiciones laborales dignas y salarios justos verificables. Confección en lotes pequeños para eliminar el desperdicio textil y la sobreproducción.
+              </p>
+            </div>
+            <div class="pillar-footer">Confección local transparente</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECCIÓN CATÁLOGO INTERACTIVO DINÁMICO (CARRUSEL DE 3 PASOS) -->
+    <section 
+      id="armar-outfit" 
+      class="section-beige" 
+      role="region" 
+      aria-roledescription="carrusel" 
+      aria-label="Catálogo interactivo de EcoModa en tres pasos"
+      aria-live="polite"
+    >
+      <div class="container">
+        <div class="section-header" style="margin-left: auto; margin-right: auto; text-align: center;">
+          <span class="section-kicker" style="background: var(--color-blanco); display: inline-block; padding: 0.25rem 0.75rem; border: 1px solid var(--color-terracota); color: var(--color-terracota); border-radius: 9999px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">
+            ✦ Catálogo Interactivo 2026
+          </span>
+          <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-top: 0.5rem;">
+            Catálogo <span style="color: var(--color-terracota);">✦</span>
+          </h2>
+          <p class="section-desc">
+            Diseña tu look sostenible en tres pasos con desplazamiento dinámico continuo. Selecciona cada prenda y pide tu look directamente por WhatsApp.
+          </p>
+        </div>
+
+        <div class="catalog-carousel-container" id="catalogCarouselRegion">
+          
+          <!-- Flecha izquierda del carrusel -->
+          <button type="button" class="catalog-nav-arrow prev" id="ecomodaPrevTrackBtn" aria-label="Retroceder al paso anterior del catálogo">
+            ‹
+          </button>
+
+          <!-- Ventana del carrusel -->
+          <div class="catalog-viewport" id="ecomodaViewport">
+            <div class="catalog-track" id="ecomodaTrack">
+              
+              <!-- ==============================================================
+                   PASO 1 · SUPERIOR
+                   ============================================================== -->
+              <article class="catalog-step-card" id="ecomodaCard-0">
+                <div>
+                  <div class="step-header">
+                    <span class="step-tag-pill">PASO 1 · SUPERIOR</span>
+                    <div class="step-counter-box">
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(0, -1)" aria-label="Opción superior anterior">‹</button>
+                      <span class="step-counter-label" id="ecoCounter-0">1/4</span>
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(0, 1)" aria-label="Siguiente opción superior">›</button>
+                    </div>
+                  </div>
+
+                  <!-- REEMPLAZO DE FOTOS REALES: Coloca aquí <img src="..." alt="..." /> con proporción 4:5 -->
+                  <div class="card-photo-placeholder">
+                    <span class="card-photo-watermark">100% Sostenible</span>
+                    <svg class="card-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/>
+                    </svg>
+                    <div class="card-photo-title" id="ecoPhotoTitle-0">Camisa Lino Natural Prelavado</div>
+                    <span class="card-photo-ratio">Proporción 4:5 · EcoModa</span>
+                  </div>
+
+                  <div class="card-text-block">
+                    <h3 class="card-garment-title" id="ecoTitle-0">Camisa Lino Natural Prelavado</h3>
+                    <p class="card-garment-desc" id="ecoDesc-0">100% Lino orgánico europeo · Arena Natural</p>
+                  </div>
+                </div>
+
+                <div class="card-options-grid" role="group" aria-label="Prendas superiores">
+                  <button type="button" class="card-option-btn active" onclick="selectStepOption(0, 0, this)">Camisa Lino</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(0, 1, this)">Polo Pima</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(0, 2, this)">Blusa Botánica</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(0, 3, this)">Sobrecamisa Unisex</button>
+                </div>
+              </article>
+
+              <!-- ==============================================================
+                   PASO 2 · INFERIOR
+                   ============================================================== -->
+              <article class="catalog-step-card" id="ecomodaCard-1">
+                <div>
+                  <div class="step-header">
+                    <span class="step-tag-pill">PASO 2 · INFERIOR</span>
+                    <div class="step-counter-box">
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(1, -1)" aria-label="Opción inferior anterior">‹</button>
+                      <span class="step-counter-label" id="ecoCounter-1">1/4</span>
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(1, 1)" aria-label="Siguiente opción inferior">›</button>
+                    </div>
+                  </div>
+
+                  <!-- REEMPLAZO DE FOTOS REALES: Coloca aquí <img src="..." alt="..." /> con proporción 4:5 -->
+                  <div class="card-photo-placeholder">
+                    <span class="card-photo-watermark">100% Sostenible</span>
+                    <svg class="card-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2v6h12V2"/>
+                      <path d="M6 8l-2 14h6l2-10 2 10h6L18 8"/>
+                    </svg>
+                    <div class="card-photo-title" id="ecoPhotoTitle-1">Pantalón Chino Corte Relajado</div>
+                    <span class="card-photo-ratio">Proporción 4:5 · EcoModa</span>
+                  </div>
+
+                  <div class="card-text-block">
+                    <h3 class="card-garment-title" id="ecoTitle-1">Pantalón Chino Corte Relajado</h3>
+                    <p class="card-garment-desc" id="ecoDesc-1">100% Algodón Pima orgánico · Verde Oliva Tierra</p>
+                  </div>
+                </div>
+
+                <div class="card-options-grid" role="group" aria-label="Prendas inferiores">
+                  <button type="button" class="card-option-btn active" onclick="selectStepOption(1, 0, this)">Pantalón Chino</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(1, 1, this)">Pantalón Culotte</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(1, 2, this)">Bermuda Sostenible</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(1, 3, this)">Falda Midi</button>
+                </div>
+              </article>
+
+              <!-- ==============================================================
+                   PASO 3 · ACCESORIO
+                   ============================================================== -->
+              <article class="catalog-step-card" id="ecomodaCard-2">
+                <div>
+                  <div class="step-header">
+                    <span class="step-tag-pill">PASO 3 · ACCESORIO</span>
+                    <div class="step-counter-box">
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(2, -1)" aria-label="Opción de accesorio anterior">‹</button>
+                      <span class="step-counter-label" id="ecoCounter-2">1/4</span>
+                      <button type="button" class="step-arrow-btn" onclick="cycleOption(2, 1)" aria-label="Siguiente opción de accesorio">›</button>
+                    </div>
+                  </div>
+
+                  <!-- REEMPLAZO DE FOTOS REALES: Coloca aquí <img src="..." alt="..." /> con proporción 4:5 -->
+                  <div class="card-photo-placeholder">
+                    <span class="card-photo-watermark">100% Sostenible</span>
+                    <svg class="card-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                      <line x1="3" y1="6" x2="21" y2="6"/>
+                      <path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <div class="card-photo-title" id="ecoPhotoTitle-2">Bolso Tote Bag de Lino Pesado</div>
+                    <span class="card-photo-ratio">Proporción 4:5 · EcoModa</span>
+                  </div>
+
+                  <div class="card-text-block">
+                    <h3 class="card-garment-title" id="ecoTitle-2">Bolso Tote Bag de Lino Pesado</h3>
+                    <p class="card-garment-desc" id="ecoDesc-2">Lino regenerativo de alto gramaje · Arena Rústico</p>
+                  </div>
+                </div>
+
+                <div class="card-options-grid" role="group" aria-label="Accesorios">
+                  <button type="button" class="card-option-btn active" onclick="selectStepOption(2, 0, this)">Bolso Tote</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(2, 1, this)">Cinturón Textil</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(2, 2, this)">Pañuelo Liviano</button>
+                  <button type="button" class="card-option-btn" onclick="selectStepOption(2, 3, this)">Gorra Clásica</button>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Flecha derecha del carrusel -->
+          <button type="button" class="catalog-nav-arrow next" id="ecomodaNextTrackBtn" aria-label="Avanzar al siguiente paso del catálogo">
+            ›
+          </button>
+
+          <!-- Puntos indicadores -->
+          <div class="catalog-dots-row" role="tablist" aria-label="Indicadores de paso del catálogo">
+            <button type="button" class="catalog-dot active" onclick="goToStepSlide(0)" aria-label="Paso 1: Superior" role="tab" aria-selected="true"></button>
+            <button type="button" class="catalog-dot" onclick="goToStepSlide(1)" aria-label="Paso 2: Inferior" role="tab" aria-selected="false"></button>
+            <button type="button" class="catalog-dot" onclick="goToStepSlide(2)" aria-label="Paso 3: Accesorio" role="tab" aria-selected="false"></button>
+          </div>
+
+          <div class="catalog-status-note" id="ecomodaStatusNote">
+            Desplazamiento automático activo (cada 5s)
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             RESUMEN "TU LOOK ECOMODA" CON BOTÓN DE WHATSAPP
+             ============================================================== -->
+        <div class="look-summary-box">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+              <span style="color: var(--color-terracota); font-weight: 800; font-size: 1.1rem;">✓</span>
+              <h3 style="font-family: 'Montserrat', Arial, sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--color-verde);">
+                Tu look EcoModa
+              </h3>
+            </div>
+            <div class="look-summary-lines">
+              <div>
+                <span class="look-line-cat">Superior:</span>
+                <span class="look-line-title" id="summaryTopTitle">Camisa Lino Natural Prelavado</span>
+                <span class="look-line-desc" id="summaryTopDesc">(100% Lino orgánico europeo · Arena Natural)</span>
+              </div>
+              <div>
+                <span class="look-line-cat">Inferior:</span>
+                <span class="look-line-title" id="summaryBotTitle">Pantalón Chino Corte Relajado</span>
+                <span class="look-line-desc" id="summaryBotDesc">(100% Algodón Pima orgánico · Verde Oliva Tierra)</span>
+              </div>
+              <div>
+                <span class="look-line-cat">Accesorio:</span>
+                <span class="look-line-title" id="summaryAccTitle">Bolso Tote Bag de Lino Pesado</span>
+                <span class="look-line-desc" id="summaryAccDesc">(Lino regenerativo de alto gramaje · Arena Rústico)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               CONFIGURACIÓN DE WHATSAPP:
+               Cambia el número 51000000000 por tu número real con código de país.
+               ============================================================== -->
+          <div>
+            <a 
+              href="https://wa.me/51000000000?text=Hola,%20quiero%20el%20look:%20Camisa%20Lino%20Natural%20Prelavado,%20Pantal%C3%B3n%20Chino%20Corte%20Relajado%20y%20Bolso%20Tote%20Bag%20de%20Lino%20Pesado" 
+              id="ecoWhatsAppBtn" 
+              class="btn-look-whatsapp" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Pedir este look seleccionado por WhatsApp"
+            >
+              <span>Pide tu look por WhatsApp</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hashtag y mención de redes -->
+        <div class="outfit-hashtag-box">
+          <p style="font-size: 1rem; font-weight: 700;">
+            Comparte tu look con el hashtag
+          </p>
+          <div class="hashtag">#MiModaSostenible</div>
+          <p style="font-size: 0.85rem; color: rgba(46, 94, 62, 0.85);">
+            Sube tus fotos vistiendo tus prendas EcoModa y etiqueta a <strong>@EcoModaPeru</strong> en Instagram y TikTok para aparecer en nuestra galería comunitaria.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. COLECCIÓN -->
+    <section id="coleccion" class="section-standard">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Catálogo & Cortes</span>
+          <h2 class="section-title">Colección EcoModa</h2>
+          <p class="section-desc">
+            Piezas seleccionadas con materiales sostenibles, corte moderno y atención directa.
+          </p>
+        </div>
+
+        <div class="collection-grid">
+          
+          <!-- Nueva línea masculina -->
+          <article class="collection-card">
+            <div>
+              <div class="card-img-wrap">
+                <img src="/src/assets/images/mens_collection_linen_1793939690888.jpg" alt="Línea masculina EcoModa con camisa de lino y pantalón chino sostenible" />
+                <div class="card-badge">Nueva línea masculina</div>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Estilo moderno para él, sin dañar el planeta</h3>
+                <p class="card-desc">
+                  Nueva línea masculina: corte moderno y telas responsables. Prendas diseñadas para ofrecer confort térmico natural, versatilidad en el día a día y confección libre de pesticidas sintéticos.
+                </p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="#armar-outfit" class="btn-verde">Conoce la línea</a>
+            </div>
+          </article>
+
+          <!-- Ropa que dura -->
+          <article class="collection-card">
+            <div>
+              <div class="card-img-wrap">
+                <img src="/src/assets/images/durable_clothing_craft_1793939691230.jpg" alt="Prendas duraderas con acabados artesanales y costuras dobles de EcoModa" />
+                <div class="card-badge">Ropa que dura</div>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Prendas duraderas, catálogo y atención personalizada</h3>
+                <p class="card-desc">
+                  Ropa pensada para resistir el paso del tiempo. Seleccionamos hilados de alta tenacidad, costuras dobles y te brindamos asesoría directa para elegir tallas y prolongar la vida útil de cada fibra.
+                </p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://wa.me/51000000000?text=Hola%2C%20quiero%20el%20cat%C3%A1logo%20de%20EcoModa" target="_blank" rel="noopener noreferrer" class="btn-terracota" style="width: 100%;">
+                Pide tu catálogo por WhatsApp
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BLOQUE BEIGE DE SOSTENIBILIDAD -->
+    <section id="sostenibilidad" class="section-beige">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker" style="background: var(--color-blanco); display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid var(--color-verde); border-radius: 3px;">
+            Datos Verificables
+          </span>
+          <h2 class="section-title">
+            El sello «Materiales sostenibles» solo aparece en prendas con datos verificables
+          </h2>
+          <p class="section-desc">
+            Cada prenda con sello lleva registro de laboratorio y trazabilidad de lote auditable.
+          </p>
+        </div>
+
+        <!-- Tabla con tres filas para completar -->
+        <div class="table-container">
+          <div class="table-header">
+            <strong>Ficha de Verificación de Lote Oficial (LOTE-ECO-2026-PIMA)</strong>
+          </div>
+          <table class="verification-table">
+            <tbody>
+              <tr>
+                <th scope="row">Porcentaje de material sostenible</th>
+                <td>100% Algodón Pima Orgánico certificado, cultivado sin pesticidas sintéticos ni semillas transgénicas.</td>
+              </tr>
+              <tr>
+                <th scope="row">Certificación o proveedor</th>
+                <td>GOTS (Global Organic Textile Standard) Licencia CU-851234 y OEKO-TEX Standard 100 Clase I.</td>
+              </tr>
+              <tr>
+                <th scope="row">Origen de la tela</th>
+                <td>Valles de Chincha y Cañete (Perú). Hilatura y teñido botánico artesanal en Lurín.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Texto explícito de prácticas sostenibles -->
+        <div class="operational-box">
+          <h4 style="font-size: 1rem; margin-bottom: 0.4rem; color: var(--color-verde);">
+            Comunicación con mínimo impacto
+          </h4>
+          <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-verde); line-height: 1.5;">
+            Reutilizamos fotos y videos en varias redes, trabajamos con luz natural y evitamos imprimir material.
+          </p>
+          <p style="font-size: 0.8rem; color: rgba(46, 94, 62, 0.7); margin-top: 0.4rem;">
+            Nuestros catálogos son 100% digitales y reducimos traslados innecesarios en toda nuestra cadena operativa.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. CIUDADES -->
+    <section id="ciudades" class="section-standard">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Presencia Nacional</span>
+          <h2 class="section-title">Moda sostenible en cada ciudad</h2>
+          <p class="section-desc">
+            Cuatro ciudades unidas por una forma consciente de vestir en el Perú.
+          </p>
+        </div>
+
+        <div class="cities-grid">
+          <!-- Lima -->
+          <div class="city-card">
+            <div>
+              <div class="city-kicker">Ciudad 01</div>
+              <h3 class="city-name">Lima</h3>
+              <p class="city-text">
+                ¿De dónde viene tu ropa? Descubre la colección en el link de nuestra bio.
+              </p>
+            </div>
+            <div class="city-footer">Entregas sin emisiones en bicicleta</div>
+          </div>
+
+          <!-- Arequipa -->
+          <div class="city-card">
+            <div>
+              <div class="city-kicker">Ciudad 02</div>
+              <h3 class="city-name">Arequipa</h3>
+              <p class="city-text">
+                Arma tu outfit sostenible en 15 segundos.
+              </p>
+            </div>
+            <div class="city-footer">Prendas en tonos tierra inspiradas en el sillar</div>
+          </div>
+
+          <!-- Trujillo -->
+          <div class="city-card">
+            <div>
+              <div class="city-kicker">Ciudad 03</div>
+              <h3 class="city-name">Trujillo</h3>
+              <p class="city-text">
+                Ropa duradera y sostenible, con catálogo y atención personalizada.
+              </p>
+            </div>
+            <div class="city-footer">Asesoría directa y embalaje de lino reusable</div>
+          </div>
+
+          <!-- Piura -->
+          <div class="city-card">
+            <div>
+              <div class="city-kicker">Ciudad 04</div>
+              <h3 class="city-name">Piura</h3>
+              <p class="city-text">
+                Nueva línea masculina EcoModa: corte moderno y telas responsables.
+              </p>
+            </div>
+            <div class="city-footer">Fibras frescas ideales para el clima cálido</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SUSCRIPCIÓN -->
+    <section id="suscribete" class="section-standard" style="background-color: var(--color-beige-soft);">
+      <div class="container" style="max-width: 680px;">
+        <div class="section-header" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <span class="section-kicker">Comunidad EcoModa</span>
+          <h2 class="section-title">Únete a la comunidad EcoModa</h2>
+          <p class="section-desc">
+            Sé parte de los lanzamientos de lotes sostenibles y actividades en tu ciudad.
+          </p>
+        </div>
+
+        <div class="form-box">
+          <div class="alert-error" id="formAlertError"></div>
+          <div class="alert-success" id="formAlertSuccess"></div>
+
+          <form id="subscribeForm" onsubmit="handleFormSubmit(event)">
+            
+            <!-- Campo: Nombre -->
+            <div class="form-group">
+              <label for="subNombre" class="form-label">Nombre completo *</label>
+              <input type="text" id="subNombre" class="form-input" placeholder="Ej. Camila Vargas" required />
+            </div>
+
+            <!-- Campo: Correo electrónico -->
+            <div class="form-group">
+              <label for="subEmail" class="form-label">Correo electrónico</label>
+              <input type="email" id="subEmail" class="form-input" placeholder="camila@ejemplo.com" />
+            </div>
+
+            <!-- Campo: Número de WhatsApp con código +51 -->
+            <div class="form-group">
+              <label for="subWhatsapp" class="form-label">Número de WhatsApp (con código +51)</label>
+              <div class="input-with-prefix">
+                <span class="prefix-51">+51</span>
+                <input type="tel" id="subWhatsapp" class="form-input" placeholder="987 654 321" maxlength="12" />
+              </div>
+            </div>
+
+            <!-- Campo: Ciudad -->
+            <div class="form-group">
+              <label for="subCiudad" class="form-label">Ciudad *</label>
+              <select id="subCiudad" class="form-select">
+                <option value="Lima">Lima</option>
+                <option value="Arequipa">Arequipa</option>
+                <option value="Trujillo">Trujillo</option>
+                <option value="Piura">Piura</option>
+              </select>
+            </div>
+
+            <!-- Dos casillas de consentimiento SEPARADAS y sin marcar por defecto -->
+            <div style="margin: 1.5rem 0 1rem; padding-top: 1rem; border-top: 1px solid var(--color-beige);">
+              <div class="checkbox-group">
+                <input type="checkbox" id="consentWhatsAppCheck" />
+                <label for="consentWhatsAppCheck" class="checkbox-label">
+                  Acepto recibir mensajes de EcoModa por WhatsApp.
+                </label>
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="consentEmailCheck" />
+                <label for="consentEmailCheck" class="checkbox-label">
+                  Acepto recibir correos de EcoModa.
+                </label>
+              </div>
+            </div>
+
+            <!-- Texto legal según Ley N.° 29733 -->
+            <div class="legal-notice">
+              Tus datos se usarán solo según tu consentimiento, conforme a la Ley N.° 29733 de Protección de Datos Personales. Puedes darte de baja en cualquier momento. 
+              <span class="legal-link" onclick="openModal('privacy')">Ver política de privacidad</span>.
+            </div>
+
+            <button type="submit" class="btn-terracota" style="width: 100%; padding: 0.85rem;">
+              Unirme a la comunidad
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. PIE DE PÁGINA EN VERDE BOSQUE (#2E5E3E) -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        <div>
+          <!-- LOGO OFICIAL INVERTIDO: hojas en beige claro, texto blanco, «Moda» en beige -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="EcoModa, moda sostenible, estilo con propósito" style="height: 52px; width: auto;">
+            <!-- Hojas en beige claro #E8DCC4 -->
+            <g fill="#E8DCC4">
+              <path d="M430 118 C398 110 386 78 400 46 C426 72 436 96 430 118 Z"/>
+              <path d="M430 118 C452 102 480 92 494 60 C468 66 444 88 430 118 Z"/>
+              <path d="M430 118 L430 92" stroke="#E8DCC4" stroke-width="5" stroke-linecap="round"/>
+            </g>
+            <!-- Texto blanco y «Moda» en beige #E8DCC4 -->
+            <text x="18" y="126" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="74" letter-spacing="-1" fill="#FFFFFF">Eco<tspan fill="#E8DCC4">Moda</tspan></text>
+            <text x="22" y="162" font-family="Open Sans, Arial, sans-serif" font-weight="600" font-size="17" fill="#E8DCC4">Moda sostenible, estilo con propósito</text>
+          </svg>
+
+          <p class="footer-desc">
+            Moda ética con materias primas de bajo impacto ambiental, trazabilidad completa y confección en talleres justos en el Perú.
+          </p>
+        </div>
+
+        <div class="footer-links-grid">
+          <div>
+            <span class="footer-col-title">Secciones</span>
+            <ul class="footer-link-list">
+              <li><a href="#por-que-ecomoda">Por qué EcoModa</a></li>
+              <li><a href="#armar-outfit">Arma tu outfit</a></li>
+              <li><a href="#coleccion">Colección</a></li>
+              <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="footer-col-title">Ciudades</span>
+            <ul class="footer-link-list">
+              <li><a href="#ciudades">Lima</a></li>
+              <li><a href="#ciudades">Arequipa</a></li>
+              <li><a href="#ciudades">Trujillo</a></li>
+              <li><a href="#ciudades">Piura</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="footer-col-title">Legalidad</span>
+            <ul class="footer-link-list">
+              <li><button type="button" class="footer-modal-trigger" onclick="openModal('privacy')">Privacidad (Ley 29733)</button></li>
+              <li><button type="button" class="footer-modal-trigger" onclick="openModal('terms')">Términos de servicio</button></li>
+              <li><button type="button" class="footer-modal-trigger" onclick="openModal('reclamaciones')">Libro de Reclamaciones</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto legal obligatorio conforme a Ley N.° 29571 -->
+      <div class="footer-legal-bar">
+        <p class="consumer-law-text">
+          Las afirmaciones de sostenibilidad de EcoModa están respaldadas por datos verificables, conforme al Código de Protección y Defensa del Consumidor (Ley N.° 29571).
+        </p>
+        <div class="footer-copy-row">
+          <div>© 2026 EcoModa. Todos los derechos reservados.</div>
+          <div>Lima · Arequipa · Trujillo · Piura · #MiModaSostenible</div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 10. BOTÓN FLOTANTE DE WHATSAPP EN TERRACOTA (#B5573A) -->
+  <a 
+    href="https://wa.me/51000000000?text=Hola%2C%20quiero%20el%20cat%C3%A1logo%20de%20EcoModa" 
+    class="whatsapp-floating" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Abrir chat de WhatsApp para solicitar catálogo de EcoModa (número 51000000000)"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.69 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z"/>
+    </svg>
+  </a>
+
+  <!-- MODAL LEGAL ACCESIBLE -->
+  <div class="modal-overlay" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="legalModalTitle" class="font-title" style="font-size: 1.25rem;">Información Legal</h3>
+        <button type="button" class="modal-close" onclick="closeModal()" aria-label="Cerrar ventana modal">&times;</button>
+      </div>
+      <div id="modalBody" style="font-size: 0.85rem; line-height: 1.6;"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT INTEGRADO -->
+  <script>
+    /* ==============================================================
+       DATOS OFICIALES DE ECOMODA (Exactamente los solicitados)
+       ============================================================== */
+    const CATALOG_STEPS = [
+      {
+        step: 1,
+        category: 'Superior',
+        options: [
+          { short: 'Camisa Lino', title: 'Camisa Lino Natural Prelavado', desc: '100% Lino orgánico europeo · Arena Natural' },
+          { short: 'Polo Pima', title: 'Polo Pima Orgánico Escote Redondo', desc: '100% Algodón Pima GOTS · Verde Bosque Botánico' },
+          { short: 'Blusa Botánica', title: 'Blusa Botánica Manga Tres Cuartos', desc: '70% Lino + 30% Algodón nativo · Blanco Crudo' },
+          { short: 'Sobrecamisa Unisex', title: 'Sobrecamisa Unisex Estructurada', desc: '85% Lino + 15% Cáñamo · Terracota Mineral' }
+        ]
+      },
+      {
+        step: 2,
+        category: 'Inferior',
+        options: [
+          { short: 'Pantalón Chino', title: 'Pantalón Chino Corte Relajado', desc: '100% Algodón Pima orgánico · Verde Oliva Tierra' },
+          { short: 'Pantalón Culotte', title: 'Pantalón Culotte Pierna Ancha', desc: '100% Lino de cultivo limpio · Beige Arena' },
+          { short: 'Bermuda Sostenible', title: 'Bermuda Sostenible con Cordón', desc: '80% Lino + 20% Algodón reciclado · Carbón Suave' },
+          { short: 'Falda Midi', title: 'Falda Midi con Botones de Madera', desc: '100% Lino puro sin blanquear · Lino Tostado' }
+        ]
+      },
+      {
+        step: 3,
+        category: 'Accesorio',
+        options: [
+          { short: 'Bolso Tote', title: 'Bolso Tote Bag de Lino Pesado', desc: 'Lino regenerativo de alto gramaje · Arena Rústico' },
+          { short: 'Cinturón Textil', title: 'Cinturón Textil con Hebilla de Madera', desc: 'Algodón nativo trenzado a mano · Tierra Natural' },
+          { short: 'Pañuelo Liviano', title: 'Pañuelo Liviano de Algodón Orgánico', desc: '100% Algodón pima teñido botánico · Terracota Andino' },
+          { short: 'Gorra Clásica', title: 'Gorra Clásica de Lino Fresco', desc: '100% Lino con visera de fibra vegetal · Verde Bosque' }
+        ]
+      }
+    ];
+
+    const selectedStepIndexes = [0, 0, 0];
+    let currentStepSlide = 0; // 0, 1, 2
+    let catalogAutoTimer = null;
+    let isCatalogPaused = false;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Configuración de WhatsApp
+    const ECO_WHATSAPP_PHONE = '51000000000'; // <- Reemplazar por número real
+
+    function selectStepOption(stepIdx, optIdx, btn) {
+      selectedStepIndexes[stepIdx] = optIdx;
+      const opt = CATALOG_STEPS[stepIdx].options[optIdx];
+
+      // Actualizar tarjeta
+      document.getElementById(`ecoTitle-${stepIdx}`).innerText = opt.title;
+      document.getElementById(`ecoDesc-${stepIdx}`).innerText = opt.desc;
+      document.getElementById(`ecoPhotoTitle-${stepIdx}`).innerText = opt.title;
+      document.getElementById(`ecoCounter-${stepIdx}`).innerText = `${optIdx + 1}/4`;
+
+      // Marcar botón activo
+      const parent = btn.parentElement;
+      const btns = parent.querySelectorAll('.card-option-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      updateEcoLookSummary();
+    }
+
+    function cycleOption(stepIdx, delta) {
+      const total = CATALOG_STEPS[stepIdx].options.length;
+      let newIdx = (selectedStepIndexes[stepIdx] + delta + total) % total;
+      const card = document.getElementById(`ecomodaCard-${stepIdx}`);
+      const btns = card.querySelectorAll('.card-option-btn');
+      if (btns[newIdx]) {
+        selectStepOption(stepIdx, newIdx, btns[newIdx]);
+      }
+    }
+
+    function updateEcoLookSummary() {
+      const top = CATALOG_STEPS[0].options[selectedStepIndexes[0]];
+      const bot = CATALOG_STEPS[1].options[selectedStepIndexes[1]];
+      const acc = CATALOG_STEPS[2].options[selectedStepIndexes[2]];
+
+      document.getElementById('summaryTopTitle').innerText = top.title;
+      document.getElementById('summaryTopDesc').innerText = `(${top.desc})`;
+      document.getElementById('summaryBotTitle').innerText = bot.title;
+      document.getElementById('summaryBotDesc').innerText = `(${bot.desc})`;
+      document.getElementById('summaryAccTitle').innerText = acc.title;
+      document.getElementById('summaryAccDesc').innerText = `(${acc.desc})`;
+
+      const text = `Hola, quiero el look: ${top.title}, ${bot.title} y ${acc.title}`;
+      const url = `https://wa.me/${ECO_WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+      const link = document.getElementById('ecoWhatsAppBtn');
+      if (link) link.href = url;
+    }
+
+    function updateCarouselTrack() {
+      const track = document.getElementById('ecomodaTrack');
+      if (!track) return;
+      const width = window.innerWidth;
+      const cards = track.querySelectorAll('.catalog-step-card');
+      if (cards.length === 0) return;
+
+      let targetX = 0;
+      if (width < 1024) {
+        const activeCard = cards[currentStepSlide];
+        if (activeCard) {
+          targetX = -activeCard.offsetLeft;
+        }
+      }
+
+      if (prefersReducedMotion) {
+        track.style.transition = 'none';
+      } else {
+        track.style.transition = 'transform 500ms cubic-bezier(0.25, 1, 0.5, 1)';
+      }
+      track.style.transform = `translateX(${targetX}px)`;
+
+      // Actualizar puntos
+      const dots = document.querySelectorAll('.catalog-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentStepSlide);
+        dot.setAttribute('aria-selected', idx === currentStepSlide ? 'true' : 'false');
+      });
+    }
+
+    function goToStepSlide(idx) {
+      currentStepSlide = (idx + 3) % 3;
+      updateCarouselTrack();
+    }
+
+    function startCatalogAutoAdvance() {
+      if (prefersReducedMotion) return;
+      stopCatalogAutoAdvance();
+      catalogAutoTimer = setInterval(() => {
+        if (!isCatalogPaused) {
+          goToStepSlide(currentStepSlide + 1);
+        }
+      }, 5000);
+    }
+
+    function stopCatalogAutoAdvance() {
+      if (catalogAutoTimer) {
+        clearInterval(catalogAutoTimer);
+        catalogAutoTimer = null;
+      }
+    }
+
+    // Inicializar listeners del carrusel
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevBtn = document.getElementById('ecomodaPrevTrackBtn');
+      const nextBtn = document.getElementById('ecomodaNextTrackBtn');
+      const region = document.getElementById('catalogCarouselRegion');
+      const viewport = document.getElementById('ecomodaViewport');
+      const note = document.getElementById('ecomodaStatusNote');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          goToStepSlide(currentStepSlide - 1);
+          isCatalogPaused = true;
+          if (note) note.innerText = 'Desplazamiento pausado por interacción';
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          goToStepSlide(currentStepSlide + 1);
+          isCatalogPaused = true;
+          if (note) note.innerText = 'Desplazamiento pausado por interacción';
+        });
+      }
+
+      if (region) {
+        region.addEventListener('mouseenter', () => {
+          isCatalogPaused = true;
+          if (note) note.innerText = 'Desplazamiento pausado por interacción';
+        });
+        region.addEventListener('mouseleave', () => {
+          isCatalogPaused = false;
+          if (note) note.innerText = 'Desplazamiento automático activo (cada 5s)';
+        });
+        region.addEventListener('focusin', () => {
+          isCatalogPaused = true;
+          if (note) note.innerText = 'Desplazamiento pausado por interacción';
+        });
+        region.addEventListener('focusout', () => {
+          isCatalogPaused = false;
+          if (note) note.innerText = 'Desplazamiento automático activo (cada 5s)';
+        });
+      }
+
+      // Swipe en móvil
+      if (viewport) {
+        let touchStart = 0;
+        viewport.addEventListener('touchstart', (e) => {
+          touchStart = e.changedTouches[0].screenX;
+          isCatalogPaused = true;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+          const touchEnd = e.changedTouches[0].screenX;
+          const diff = touchEnd - touchStart;
+          if (Math.abs(diff) > 40) {
+            if (diff < 0) {
+              goToStepSlide(currentStepSlide + 1);
+            } else {
+              goToStepSlide(currentStepSlide - 1);
+            }
+          }
+          isCatalogPaused = false;
+        }, { passive: true });
+      }
+
+      window.addEventListener('resize', () => {
+        updateCarouselTrack();
+      });
+
+      updateEcoLookSummary();
+      updateCarouselTrack();
+      startCatalogAutoAdvance();
+    });
+
+    // Toggle menú móvil
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', toggleMenu);
+
+    // Formulario de suscripción con validación de consentimiento
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const errBox = document.getElementById('formAlertError');
+      const succBox = document.getElementById('formAlertSuccess');
+      errBox.style.display = 'none';
+      succBox.style.display = 'none';
+
+      const nombre = document.getElementById('subNombre').value.trim();
+      const email = document.getElementById('subEmail').value.trim();
+      const whatsapp = document.getElementById('subWhatsapp').value.trim();
+      const ciudad = document.getElementById('subCiudad').value;
+      const consentWA = document.getElementById('consentWhatsAppCheck').checked;
+      const consentEM = document.getElementById('consentEmailCheck').checked;
+
+      // Validación 1: Al menos una casilla debe estar marcada
+      if (!consentWA && !consentEM) {
+        errBox.innerText = 'Debes seleccionar al menos un canal de consentimiento (WhatsApp o correo) para poder recibir novedades.';
+        errBox.style.display = 'block';
+        return;
+      }
+
+      // Validación 2: Si marcó email, validar correo
+      if (consentEM) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+          errBox.innerText = 'Por favor ingresa un correo electrónico válido.';
+          errBox.style.display = 'block';
+          return;
+        }
+      }
+
+      // Validación 3: Si marcó WhatsApp, validar número
+      if (consentWA) {
+        const cleanWA = whatsapp.replace(/\D/g, '');
+        if (cleanWA.length < 9) {
+          errBox.innerText = 'Por favor ingresa un número de teléfono de 9 dígitos para WhatsApp.';
+          errBox.style.display = 'block';
+          return;
+        }
+      }
+
+      // =========================================================================
+      // INTEGRACIÓN: Conectar aquí el servicio de envío de correos (ej. Resend, SendGrid)
+      // o la API de WhatsApp Business (ej. Twilio, Meta Cloud API)
+      // Parámetros disponibles: { nombre, email: consentEM ? email : null, whatsapp: consentWA ? whatsapp : null, ciudad }
+      // =========================================================================
+
+      const canales = [];
+      if (consentWA) canales.push('WhatsApp (+51)');
+      if (consentEM) canales.push('correo electrónico');
+
+      succBox.innerText = `¡Gracias por unirte, ${nombre}! Te enviaremos novedades sobre ${ciudad} a través de: ${canales.join(' y ')}. Conforme a la Ley N.° 29733.`;
+      succBox.style.display = 'block';
+
+      // Limpiar formulario conservando ciudad
+      document.getElementById('subNombre').value = '';
+      document.getElementById('subEmail').value = '';
+      document.getElementById('subWhatsapp').value = '';
+      document.getElementById('consentWhatsAppCheck').checked = false;
+      document.getElementById('consentEmailCheck').checked = false;
+    }
+
+    // Modales legales
+    function openModal(type) {
+      const modal = document.getElementById('legalModal');
+      const title = document.getElementById('legalModalTitle');
+      const body = document.getElementById('modalBody');
+
+      if (type === 'privacy') {
+        title.innerText = 'Política de Privacidad (Ley N.° 29733)';
+        body.innerHTML = `
+          <p style="margin-bottom: 0.75rem;"><strong>Protección de Datos Personales:</strong> Conforme a la Ley N.° 29733 de la República del Perú, tus datos se tratan con estricta confidencialidad.</p>
+          <p style="margin-bottom: 0.75rem;"><strong>Finalidad:</strong> Nos comunicaremos contigo única y exclusivamente por los canales que hayas autorizado voluntariamente (WhatsApp o correo electrónico). No comercializamos ni transferimos tus datos a terceros.</p>
+          <p><strong>Derechos ARCO:</strong> Puedes solicitar la baja, rectificación o eliminación de tus datos en cualquier momento enviándonos un mensaje directo.</p>
+        `;
+      } else if (type === 'terms') {
+        title.innerText = 'Términos y Condiciones (Ley N.° 29571)';
+        body.innerHTML = `
+          <p style="margin-bottom: 0.75rem;"><strong>Datos Verificables:</strong> Todas las afirmaciones de sostenibilidad corresponden a fichas técnicas y certificados vigentes según el Código de Protección al Consumidor.</p>
+          <p style="margin-bottom: 0.75rem;"><strong>Embalaje Ecológico:</strong> Todo envío a Lima, Arequipa, Trujillo o Piura se realiza con empaques biodegradables o reutilizables.</p>
+          <p><strong>Durabilidad Garantizada:</strong> Ofrecemos guía de cuidado para extender el ciclo de vida de tus prendas.</p>
+        `;
+      } else if (type === 'reclamaciones') {
+        title.innerText = 'Libro de Reclamaciones Virtual';
+        body.innerHTML = `
+          <p style="margin-bottom: 0.75rem;">Conforme al Código de Protección y Defensa del Consumidor (Ley N.° 29571), ponemos a disposición este canal virtual de atención.</p>
+          <p><strong>Razón Social:</strong> EcoModa Sostenible S.A.C. · RUC: 20600000001 · Domicilio Legal: Lima, Perú. Para cualquier reclamo o sugerencia, contáctanos a través de nuestro WhatsApp oficial.</p>
+        `;
+      }
+
+      modal.classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('legalModal').classList.remove('open');
+    }
+
+    // Cerrar al hacer clic fuera
+    document.getElementById('legalModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>
